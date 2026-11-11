@@ -1,0 +1,10 @@
+[
+  {
+    "id": "ko",
+    "name": "Korean",
+    "native": "한국어",
+    "description": "From zero to your first conversations: Hangul, survival phrases, numbers and ordering food.",
+    "speechLang": "ko-KR",
+    "file": "ko.json"
+  }
+]
