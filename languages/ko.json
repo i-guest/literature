@@ -1,0 +1,1665 @@
+{
+  "id": "ko",
+  "name": "Korean",
+  "native": "한국어",
+  "description": "From zero to your first conversations: Hangul, survival phrases, numbers and ordering food.",
+  "speechLang": "ko-KR",
+  "romanLabel": "Romanization",
+  "sample": "안녕하세요",
+  "romanFold": [
+    [
+      "k",
+      "g"
+    ],
+    [
+      "t",
+      "d"
+    ],
+    [
+      "p",
+      "b"
+    ],
+    [
+      "l",
+      "r"
+    ]
+  ],
+  "units": [
+    {
+      "id": "u1",
+      "title": "Hangul I: Core Sounds",
+      "description": "Learn the first 6 vowels and 10 consonants, then read real words.",
+      "lessons": [
+        {
+          "id": "u1-l1",
+          "title": "Vowels I",
+          "kind": "letter",
+          "intro": [
+            "Korean is written in Hangul, an alphabet made of simple shapes. Each letter is one sound.",
+            "Letters are stacked into square blocks. A vertical vowel (ㅏ ㅓ ㅣ) sits to the right of the consonant, and a horizontal vowel (ㅗ ㅜ ㅡ) sits below it.",
+            "When a block starts with ㅇ, that ㅇ is silent. So ㅇ + ㅏ = 아 is just the sound 'a'."
+          ],
+          "items": [
+            {
+              "id": "ko-ㅏ",
+              "target": "ㅏ",
+              "say": "아",
+              "roman": "a",
+              "en": "'a' as in father",
+              "note": "The short stroke points right. Open your mouth wide: 'ah'."
+            },
+            {
+              "id": "ko-ㅣ",
+              "target": "ㅣ",
+              "say": "이",
+              "roman": "i",
+              "en": "'ee' as in see",
+              "note": "A single straight line, like the letter 'i'. Smile slightly: 'ee'."
+            },
+            {
+              "id": "ko-ㅜ",
+              "target": "ㅜ",
+              "say": "우",
+              "roman": "u",
+              "en": "'oo' as in moon",
+              "note": "The stroke points down. Round your lips: 'oo'."
+            },
+            {
+              "id": "ko-ㅗ",
+              "target": "ㅗ",
+              "say": "오",
+              "roman": "o",
+              "en": "'o' as in go",
+              "note": "The stroke points up. Round your lips: 'oh'."
+            },
+            {
+              "id": "ko-ㅓ",
+              "target": "ㅓ",
+              "say": "어",
+              "roman": "eo",
+              "en": "'uh' as in cup",
+              "note": "The stroke points left. Open your mouth, relaxed: 'uh'."
+            },
+            {
+              "id": "ko-ㅡ",
+              "target": "ㅡ",
+              "say": "으",
+              "roman": "eu",
+              "en": "'oo' with flat lips",
+              "note": "Say 'oo' but pull your lips flat, as if smiling."
+            }
+          ]
+        },
+        {
+          "id": "u1-l2",
+          "title": "Consonants I",
+          "kind": "letter",
+          "intro": [
+            "Consonant shapes often show how your mouth or tongue moves. ㄴ looks like the tongue touching the top of the mouth.",
+            "To practise, the app says each consonant together with the vowel ㅏ (for example 가), because consonants can't be spoken alone."
+          ],
+          "items": [
+            {
+              "id": "ko-ㄱ",
+              "target": "ㄱ",
+              "say": "가",
+              "roman": "g",
+              "en": "'g' as in go (sometimes 'k')",
+              "note": "Between g and k. At the start of a word it sounds soft, like 'g'."
+            },
+            {
+              "id": "ko-ㄴ",
+              "target": "ㄴ",
+              "say": "나",
+              "roman": "n",
+              "en": "'n' as in no",
+              "note": "Tongue touches the ridge behind your top teeth."
+            },
+            {
+              "id": "ko-ㅁ",
+              "target": "ㅁ",
+              "say": "마",
+              "roman": "m",
+              "en": "'m' as in mom",
+              "note": "The shape is a closed mouth: lips together."
+            },
+            {
+              "id": "ko-ㅅ",
+              "target": "ㅅ",
+              "say": "사",
+              "roman": "s",
+              "en": "'s' as in sun",
+              "note": "Looks like a tent. Before 'ee' it sounds like 'sh'."
+            },
+            {
+              "id": "ko-ㅇ",
+              "target": "ㅇ",
+              "say": "앙",
+              "roman": "ng",
+              "en": "silent at the start, 'ng' at the end",
+              "note": "At the start of a block it is silent. At the bottom of a block it is 'ng' as in sing."
+            }
+          ]
+        },
+        {
+          "id": "u1-l3",
+          "title": "Consonants II",
+          "kind": "letter",
+          "items": [
+            {
+              "id": "ko-ㄷ",
+              "target": "ㄷ",
+              "say": "다",
+              "roman": "d",
+              "en": "'d' as in do (sometimes 't')",
+              "note": "Between d and t. Tongue behind the top teeth."
+            },
+            {
+              "id": "ko-ㄹ",
+              "target": "ㄹ",
+              "say": "라",
+              "roman": "r",
+              "en": "between 'r' and 'l'",
+              "note": "A quick tongue tap, like the 'tt' in butter. At the end of a block it is closer to 'l'."
+            },
+            {
+              "id": "ko-ㅂ",
+              "target": "ㅂ",
+              "say": "바",
+              "roman": "b",
+              "en": "'b' as in boy (sometimes 'p')",
+              "note": "Between b and p. Looks like a cup."
+            },
+            {
+              "id": "ko-ㅈ",
+              "target": "ㅈ",
+              "say": "자",
+              "roman": "j",
+              "en": "'j' as in jam",
+              "note": "Soft 'j', between j and ch."
+            },
+            {
+              "id": "ko-ㅎ",
+              "target": "ㅎ",
+              "say": "하",
+              "roman": "h",
+              "en": "'h' as in hat",
+              "note": "A light breathy 'h'."
+            }
+          ]
+        },
+        {
+          "id": "u1-l4",
+          "title": "Build Words",
+          "kind": "word",
+          "intro": [
+            "Now you can read real words. Sound out each block from left to right, top to bottom.",
+            "Example: 바다 = 바 (ba) + 다 (da) = ba-da, which means sea."
+          ],
+          "items": [
+            {
+              "id": "ko-na",
+              "target": "나",
+              "roman": "na",
+              "en": "I / me (informal)"
+            },
+            {
+              "id": "ko-ai",
+              "target": "아이",
+              "roman": "a-i",
+              "en": "child"
+            },
+            {
+              "id": "ko-namu",
+              "target": "나무",
+              "roman": "na-mu",
+              "en": "tree"
+            },
+            {
+              "id": "ko-bada",
+              "target": "바다",
+              "roman": "ba-da",
+              "en": "sea"
+            },
+            {
+              "id": "ko-saja",
+              "target": "사자",
+              "roman": "sa-ja",
+              "en": "lion"
+            },
+            {
+              "id": "ko-moja",
+              "target": "모자",
+              "roman": "mo-ja",
+              "en": "hat"
+            },
+            {
+              "id": "ko-gogi",
+              "target": "고기",
+              "roman": "go-gi",
+              "en": "meat"
+            },
+            {
+              "id": "ko-dubu",
+              "target": "두부",
+              "roman": "du-bu",
+              "en": "tofu"
+            },
+            {
+              "id": "ko-uri",
+              "target": "우리",
+              "roman": "u-ri",
+              "en": "we / our"
+            },
+            {
+              "id": "ko-dari",
+              "target": "다리",
+              "roman": "da-ri",
+              "en": "leg / bridge"
+            }
+          ]
+        }
+      ],
+      "goals": [
+        "read"
+      ]
+    },
+    {
+      "id": "u1b",
+      "title": "Your First Words",
+      "description": "네, 아니요, 서울, 감사합니다: the four words you already know.",
+      "goals": [
+        "speak",
+        "read"
+      ],
+      "lessons": [
+        {
+          "id": "u1-l5",
+          "title": "Words You Already Know",
+          "kind": "word",
+          "intro": [
+            "You already know four Korean words. Now you can read them.",
+            "네 = ㄴ + ㅔ ('e' as in net). 아니요 = 아 + 니 + 요. 서울 = 서 + 울. 감사합니다 = 감 + 사 + 합 + 니 + 다.",
+            "Notice that 합니다 is written 'hab-nida' but said 'ham-nida'. The ㅂ sound changes to 'm' before ㄴ. Korean spelling shows the letters, but speech often blends them."
+          ],
+          "items": [
+            {
+              "id": "ko-ne",
+              "target": "네",
+              "roman": "ne",
+              "en": "yes",
+              "note": "Said like 'neh'."
+            },
+            {
+              "id": "ko-aniyo",
+              "target": "아니요",
+              "roman": "a-ni-yo",
+              "en": "no",
+              "note": "Polite 'no'."
+            },
+            {
+              "id": "ko-seoul",
+              "target": "서울",
+              "roman": "seo-ul",
+              "en": "Seoul",
+              "note": "The capital of Korea. ㅓ is 'eo'."
+            },
+            {
+              "id": "ko-gamsa",
+              "target": "감사합니다",
+              "roman": "gam-sa-ham-ni-da",
+              "en": "thank you",
+              "romanAlt": [
+                "gamsahabnida"
+              ],
+              "note": "Formal and polite. Works everywhere."
+            }
+          ],
+          "introSpeak": [
+            "You already know four Korean words. Let's practise saying them clearly.",
+            "Say 감사합니다 as 'gam-sa-ham-ni-da'. The 'ham' sounds like 'hahm'. The ㅂ before ㄴ turns into an 'm' sound.",
+            "네 is 'neh' (yes). 아니요 is 'ah-nee-yo' (no). 서울 is 'suh-ool' (Seoul)."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "title": "Hangul II: Complete the Alphabet",
+      "description": "Y-vowels, double vowels, puffed and tense consonants, and final consonants.",
+      "lessons": [
+        {
+          "id": "u2-l1",
+          "title": "Y-Vowels",
+          "kind": "letter",
+          "intro": [
+            "Adding a second short stroke to a vowel adds a 'y' glide in front. ㅏ becomes ㅑ (ya)."
+          ],
+          "items": [
+            {
+              "id": "ko-ㅑ",
+              "target": "ㅑ",
+              "say": "야",
+              "roman": "ya",
+              "en": "'ya' as in yacht",
+              "note": "ㅏ with an extra stroke."
+            },
+            {
+              "id": "ko-ㅕ",
+              "target": "ㅕ",
+              "say": "여",
+              "roman": "yeo",
+              "en": "'yuh' as in young",
+              "note": "ㅓ with an extra stroke."
+            },
+            {
+              "id": "ko-ㅛ",
+              "target": "ㅛ",
+              "say": "요",
+              "roman": "yo",
+              "en": "'yo' as in yo-yo",
+              "note": "ㅗ with an extra stroke. You hear it at the end of polite sentences."
+            },
+            {
+              "id": "ko-ㅠ",
+              "target": "ㅠ",
+              "say": "유",
+              "roman": "yu",
+              "en": "'you'",
+              "note": "ㅜ with an extra stroke."
+            }
+          ]
+        },
+        {
+          "id": "u2-l2",
+          "title": "Vowels II",
+          "kind": "letter",
+          "intro": [
+            "ㅐ and ㅔ sound almost identical in modern Korean. Don't worry about telling them apart by ear. You will learn them by spelling."
+          ],
+          "items": [
+            {
+              "id": "ko-ㅐ",
+              "target": "ㅐ",
+              "say": "애",
+              "roman": "ae",
+              "soundGroup": "e",
+              "en": "'e' as in bed",
+              "note": "Sounds the same as ㅔ for most speakers today."
+            },
+            {
+              "id": "ko-ㅔ",
+              "target": "ㅔ",
+              "say": "에",
+              "roman": "e",
+              "soundGroup": "e",
+              "en": "'e' as in bed",
+              "note": "Sounds the same as ㅐ for most speakers today."
+            },
+            {
+              "id": "ko-ㅘ",
+              "target": "ㅘ",
+              "say": "와",
+              "roman": "wa",
+              "en": "'wa' as in water",
+              "note": "ㅗ + ㅏ glide together."
+            },
+            {
+              "id": "ko-ㅝ",
+              "target": "ㅝ",
+              "say": "워",
+              "roman": "wo",
+              "en": "'wuh' as in wonder",
+              "note": "ㅜ + ㅓ glide together."
+            }
+          ]
+        },
+        {
+          "id": "u2-l3",
+          "title": "Puffed Consonants",
+          "kind": "letter",
+          "intro": [
+            "Four consonants are 'aspirated': pronounced with a strong puff of air. Hold your hand in front of your mouth and you should feel it."
+          ],
+          "items": [
+            {
+              "id": "ko-ㅋ",
+              "target": "ㅋ",
+              "say": "카",
+              "roman": "k",
+              "en": "'k' with a puff of air",
+              "note": "ㄱ with an extra stroke."
+            },
+            {
+              "id": "ko-ㅌ",
+              "target": "ㅌ",
+              "say": "타",
+              "roman": "t",
+              "en": "'t' with a puff of air",
+              "note": "ㄷ with an extra stroke."
+            },
+            {
+              "id": "ko-ㅍ",
+              "target": "ㅍ",
+              "say": "파",
+              "roman": "p",
+              "en": "'p' with a puff of air",
+              "note": "Looks like a table, and you pop a big 'p'."
+            },
+            {
+              "id": "ko-ㅊ",
+              "target": "ㅊ",
+              "say": "차",
+              "roman": "ch",
+              "en": "'ch' as in church",
+              "note": "ㅈ with an extra stroke."
+            }
+          ]
+        },
+        {
+          "id": "u2-l4",
+          "title": "Tense Consonants",
+          "kind": "letter",
+          "intro": [
+            "Five doubled consonants are 'tense': squeeze your throat and say them with no puff of air, like a sharp stop."
+          ],
+          "items": [
+            {
+              "id": "ko-ㄲ",
+              "target": "ㄲ",
+              "say": "까",
+              "roman": "kk",
+              "en": "tight 'g/k', no puff",
+              "note": "Like the 'k' in sky."
+            },
+            {
+              "id": "ko-ㄸ",
+              "target": "ㄸ",
+              "say": "따",
+              "roman": "tt",
+              "en": "tight 'd/t', no puff",
+              "note": "Like the 't' in sty."
+            },
+            {
+              "id": "ko-ㅃ",
+              "target": "ㅃ",
+              "say": "빠",
+              "roman": "pp",
+              "en": "tight 'b/p', no puff",
+              "note": "Like the 'p' in spy."
+            },
+            {
+              "id": "ko-ㅆ",
+              "target": "ㅆ",
+              "say": "싸",
+              "roman": "ss",
+              "en": "tight 's'",
+              "note": "A sharper, hissing 's'."
+            },
+            {
+              "id": "ko-ㅉ",
+              "target": "ㅉ",
+              "say": "짜",
+              "roman": "jj",
+              "en": "tight 'j'",
+              "note": "A tense 'j', like 'ch' with no puff."
+            }
+          ]
+        },
+        {
+          "id": "u2-l5",
+          "title": "Final Consonants (Batchim)",
+          "kind": "word",
+          "intro": [
+            "A consonant at the bottom of a block is called batchim (받침). It closes the syllable.",
+            "Only 7 sounds are possible at the bottom: k (ㄱ ㅋ ㄲ), n (ㄴ), t (ㄷ ㅅ ㅈ ㅊ ㅌ ㅎ), l (ㄹ), m (ㅁ), p (ㅂ ㅍ), ng (ㅇ).",
+            "Example: 밥 = ㅂ + ㅏ + ㅂ = bap. The final ㅂ is a quick closed 'p'."
+          ],
+          "items": [
+            {
+              "id": "ko-bap",
+              "target": "밥",
+              "roman": "bap",
+              "en": "rice / meal"
+            },
+            {
+              "id": "ko-mul",
+              "target": "물",
+              "roman": "mul",
+              "en": "water"
+            },
+            {
+              "id": "ko-jip",
+              "target": "집",
+              "roman": "jip",
+              "en": "house / home"
+            },
+            {
+              "id": "ko-chaek",
+              "target": "책",
+              "roman": "chaek",
+              "en": "book"
+            },
+            {
+              "id": "ko-saram",
+              "target": "사람",
+              "roman": "sa-ram",
+              "en": "person"
+            },
+            {
+              "id": "ko-hanguk",
+              "target": "한국",
+              "roman": "han-guk",
+              "en": "Korea"
+            },
+            {
+              "id": "ko-hakgyo",
+              "target": "학교",
+              "roman": "hak-gyo",
+              "en": "school"
+            },
+            {
+              "id": "ko-chingu",
+              "target": "친구",
+              "roman": "chin-gu",
+              "en": "friend"
+            }
+          ]
+        }
+      ],
+      "goals": [
+        "read"
+      ]
+    },
+    {
+      "id": "u3",
+      "title": "Hello & Politeness",
+      "description": "Greet people, say thanks and sorry, and survive when you don't understand.",
+      "lessons": [
+        {
+          "id": "u3-l1",
+          "title": "Hello & Goodbye",
+          "kind": "phrase",
+          "intro": [
+            "Korean has two goodbyes. You say one to the person who is leaving, and the other to the person who is staying."
+          ],
+          "items": [
+            {
+              "id": "ko-annyeonghaseyo",
+              "target": "안녕하세요",
+              "roman": "an-nyeong-ha-se-yo",
+              "en": "hello",
+              "note": "Polite, works any time of day."
+            },
+            {
+              "id": "ko-gaseyo",
+              "target": "안녕히 가세요",
+              "roman": "an-nyeong-hi ga-se-yo",
+              "en": "goodbye (to someone leaving)",
+              "note": "Literally: 'go in peace'."
+            },
+            {
+              "id": "ko-gyeseyo",
+              "target": "안녕히 계세요",
+              "roman": "an-nyeong-hi gye-se-yo",
+              "en": "goodbye (to someone staying)",
+              "note": "Literally: 'stay in peace'. Used when YOU leave."
+            },
+            {
+              "id": "ko-annyeong",
+              "target": "안녕",
+              "roman": "an-nyeong",
+              "en": "hi / bye (casual)",
+              "note": "Only with close friends or younger people."
+            }
+          ]
+        },
+        {
+          "id": "u3-l2",
+          "title": "Thanks & Sorry",
+          "kind": "phrase",
+          "items": [
+            {
+              "id": "ko-gomapseumnida",
+              "target": "고맙습니다",
+              "roman": "go-map-seum-ni-da",
+              "en": "thank you (native Korean word)",
+              "note": "Equal to 감사합니다. Both are polite."
+            },
+            {
+              "id": "ko-joesong",
+              "target": "죄송합니다",
+              "roman": "joe-song-ham-ni-da",
+              "en": "I'm sorry (formal)",
+              "note": "Use for real apologies."
+            },
+            {
+              "id": "ko-mianhaeyo",
+              "target": "미안해요",
+              "roman": "mi-an-hae-yo",
+              "en": "sorry (everyday)",
+              "note": "Softer and less formal than 죄송합니다."
+            },
+            {
+              "id": "ko-gwaenchanayo",
+              "target": "괜찮아요",
+              "roman": "gwaen-chan-a-yo",
+              "en": "it's okay / I'm fine",
+              "note": "Answer to a thank-you or sorry."
+            },
+            {
+              "id": "ko-sillye",
+              "target": "실례합니다",
+              "roman": "sil-lye-ham-ni-da",
+              "en": "excuse me",
+              "note": "To pass by someone or to open a conversation."
+            },
+            {
+              "id": "ko-cheonmaneyo",
+              "target": "천만에요",
+              "roman": "cheon-ma-ne-yo",
+              "en": "you're welcome"
+            }
+          ]
+        },
+        {
+          "id": "u3-l3",
+          "title": "Survival Phrases",
+          "kind": "phrase",
+          "intro": [
+            "These phrases keep a conversation alive when you get lost. Learn them early."
+          ],
+          "items": [
+            {
+              "id": "ko-molla",
+              "target": "몰라요",
+              "roman": "mol-la-yo",
+              "en": "I don't know"
+            },
+            {
+              "id": "ko-algesseoyo",
+              "target": "알겠어요",
+              "roman": "al-ge-sseo-yo",
+              "en": "I understand / got it"
+            },
+            {
+              "id": "ko-jalmoreugesseoyo",
+              "target": "잘 모르겠어요",
+              "roman": "jal mo-reu-ge-sseo-yo",
+              "en": "I'm not sure / I don't really get it"
+            },
+            {
+              "id": "ko-dasimal",
+              "target": "다시 말해 주세요",
+              "roman": "da-si mal-hae ju-se-yo",
+              "en": "please say it again"
+            },
+            {
+              "id": "ko-cheoncheonhi",
+              "target": "천천히 말해 주세요",
+              "roman": "cheon-cheon-hi mal-hae ju-se-yo",
+              "en": "please speak slowly"
+            }
+          ]
+        }
+      ],
+      "dialogues": [
+        {
+          "id": "d-excuse",
+          "title": "Excuse me",
+          "lines": [
+            {
+              "who": "A",
+              "target": "실례합니다.",
+              "roman": "sil-lye-ham-ni-da",
+              "en": "Excuse me."
+            },
+            {
+              "who": "B",
+              "target": "네, 안녕하세요.",
+              "roman": "ne, an-nyeong-ha-se-yo",
+              "en": "Yes, hello."
+            },
+            {
+              "who": "A",
+              "target": "감사합니다.",
+              "roman": "gam-sa-ham-ni-da",
+              "en": "Thank you."
+            },
+            {
+              "who": "B",
+              "target": "천만에요.",
+              "roman": "cheon-ma-ne-yo",
+              "en": "You're welcome."
+            }
+          ]
+        },
+        {
+          "id": "d-sorry",
+          "title": "Sorry!",
+          "lines": [
+            {
+              "who": "A",
+              "target": "죄송합니다.",
+              "roman": "joe-song-ham-ni-da",
+              "en": "I'm sorry."
+            },
+            {
+              "who": "B",
+              "target": "괜찮아요.",
+              "roman": "gwaen-chan-a-yo",
+              "en": "It's okay."
+            },
+            {
+              "who": "A",
+              "target": "감사합니다.",
+              "roman": "gam-sa-ham-ni-da",
+              "en": "Thank you."
+            },
+            {
+              "who": "B",
+              "target": "안녕히 가세요.",
+              "roman": "an-nyeong-hi ga-se-yo",
+              "en": "Goodbye."
+            },
+            {
+              "who": "A",
+              "target": "안녕히 계세요.",
+              "roman": "an-nyeong-hi gye-se-yo",
+              "en": "Goodbye."
+            }
+          ]
+        }
+      ],
+      "goals": [
+        "speak",
+        "read"
+      ]
+    },
+    {
+      "id": "u4",
+      "title": "About You",
+      "description": "Introduce yourself and talk about learning Korean.",
+      "lessons": [
+        {
+          "id": "u4-l1",
+          "title": "Introduce Yourself",
+          "kind": "phrase",
+          "intro": [
+            "To say 'I am a ...' use 저는 ... 이에요 (after a consonant) or 예요 (after a vowel). 저 is the polite word for 'I'.",
+            "To say your name: 제 이름은 ___ 이에요/예요. Replace 민수 with your own name when you practise!"
+          ],
+          "items": [
+            {
+              "id": "ko-mannaseo",
+              "target": "만나서 반갑습니다",
+              "roman": "man-na-seo ban-gap-seum-ni-da",
+              "en": "nice to meet you"
+            },
+            {
+              "id": "ko-ireumi",
+              "target": "이름이 뭐예요?",
+              "roman": "i-reu-mi mwo-ye-yo",
+              "en": "what's your name?"
+            },
+            {
+              "id": "ko-jeireum",
+              "target": "제 이름은 민수예요",
+              "roman": "je i-reu-meun min-su-ye-yo",
+              "en": "my name is Minsu"
+            },
+            {
+              "id": "ko-haksaeng",
+              "target": "저는 학생이에요",
+              "roman": "jeo-neun hak-saeng-i-e-yo",
+              "en": "I am a student"
+            },
+            {
+              "id": "ko-hanguksaram",
+              "target": "저는 한국 사람이 아니에요",
+              "roman": "jeo-neun han-guk sa-ra-mi a-ni-e-yo",
+              "en": "I am not Korean"
+            }
+          ]
+        },
+        {
+          "id": "u4-l2",
+          "title": "Talking About Korean",
+          "kind": "phrase",
+          "items": [
+            {
+              "id": "ko-eoneu",
+              "target": "어느 나라 사람이에요?",
+              "roman": "eo-neu na-ra sa-ra-mi-e-yo",
+              "en": "what country are you from?"
+            },
+            {
+              "id": "ko-jogeum",
+              "target": "한국어를 조금 해요",
+              "roman": "han-gu-geo-reul jo-geum hae-yo",
+              "en": "I speak a little Korean"
+            },
+            {
+              "id": "ko-eoryeowo",
+              "target": "한국어가 어려워요",
+              "roman": "han-gu-geo-ga eo-ryeo-wo-yo",
+              "en": "Korean is difficult"
+            },
+            {
+              "id": "ko-jaemi",
+              "target": "한국어가 재미있어요",
+              "roman": "han-gu-geo-ga jae-mi-i-sseo-yo",
+              "en": "Korean is fun"
+            }
+          ]
+        }
+      ],
+      "dialogues": [
+        {
+          "id": "d-meet",
+          "title": "Meeting someone",
+          "lines": [
+            {
+              "who": "A",
+              "target": "안녕하세요. 이름이 뭐예요?",
+              "roman": "an-nyeong-ha-se-yo. i-reu-mi mwo-ye-yo",
+              "en": "Hello. What's your name?"
+            },
+            {
+              "who": "B",
+              "target": "제 이름은 민수예요.",
+              "roman": "je i-reu-meun min-su-ye-yo",
+              "en": "My name is Minsu."
+            },
+            {
+              "who": "A",
+              "target": "만나서 반갑습니다.",
+              "roman": "man-na-seo ban-gap-seum-ni-da",
+              "en": "Nice to meet you."
+            },
+            {
+              "who": "B",
+              "target": "만나서 반갑습니다.",
+              "roman": "man-na-seo ban-gap-seum-ni-da",
+              "en": "Nice to meet you."
+            }
+          ]
+        },
+        {
+          "id": "d-country",
+          "title": "Where are you from?",
+          "lines": [
+            {
+              "who": "A",
+              "target": "어느 나라 사람이에요?",
+              "roman": "eo-neu na-ra sa-ra-mi-e-yo",
+              "en": "What country are you from?"
+            },
+            {
+              "who": "B",
+              "target": "저는 한국 사람이 아니에요.",
+              "roman": "jeo-neun han-guk sa-ra-mi a-ni-e-yo",
+              "en": "I am not Korean."
+            },
+            {
+              "who": "A",
+              "target": "한국어를 해요?",
+              "roman": "han-gu-geo-reul hae-yo",
+              "en": "Do you speak Korean?"
+            },
+            {
+              "who": "B",
+              "target": "네, 조금 해요.",
+              "roman": "ne, jo-geum hae-yo",
+              "en": "Yes, a little."
+            },
+            {
+              "who": "A",
+              "target": "한국어가 재미있어요?",
+              "roman": "han-gu-geo-ga jae-mi-i-sseo-yo",
+              "en": "Is Korean fun?"
+            },
+            {
+              "who": "B",
+              "target": "네, 한국어가 재미있어요.",
+              "roman": "ne, han-gu-geo-ga jae-mi-i-sseo-yo",
+              "en": "Yes, Korean is fun."
+            }
+          ]
+        }
+      ],
+      "goals": [
+        "speak",
+        "read"
+      ]
+    },
+    {
+      "id": "u5",
+      "title": "Numbers & Money",
+      "description": "Korea has two number systems. Learn both, then use them for prices.",
+      "lessons": [
+        {
+          "id": "u5-l1",
+          "title": "Sino-Korean 1-10",
+          "kind": "word",
+          "intro": [
+            "Sino-Korean numbers are used for money, phone numbers, dates and minutes. Learn these first."
+          ],
+          "items": [
+            {
+              "id": "ko-il",
+              "target": "일",
+              "roman": "il",
+              "en": "1 (sino-Korean)",
+              "accept": [
+                "1"
+              ]
+            },
+            {
+              "id": "ko-i",
+              "target": "이",
+              "roman": "i",
+              "en": "2 (sino-Korean)",
+              "accept": [
+                "2"
+              ]
+            },
+            {
+              "id": "ko-sam",
+              "target": "삼",
+              "roman": "sam",
+              "en": "3 (sino-Korean)",
+              "accept": [
+                "3"
+              ]
+            },
+            {
+              "id": "ko-sa",
+              "target": "사",
+              "roman": "sa",
+              "en": "4 (sino-Korean)",
+              "accept": [
+                "4"
+              ]
+            },
+            {
+              "id": "ko-o",
+              "target": "오",
+              "roman": "o",
+              "en": "5 (sino-Korean)",
+              "accept": [
+                "5"
+              ]
+            },
+            {
+              "id": "ko-yuk",
+              "target": "육",
+              "roman": "yuk",
+              "en": "6 (sino-Korean)",
+              "accept": [
+                "6"
+              ]
+            },
+            {
+              "id": "ko-chil",
+              "target": "칠",
+              "roman": "chil",
+              "en": "7 (sino-Korean)",
+              "accept": [
+                "7"
+              ]
+            },
+            {
+              "id": "ko-pal",
+              "target": "팔",
+              "roman": "pal",
+              "en": "8 (sino-Korean)",
+              "accept": [
+                "8"
+              ]
+            },
+            {
+              "id": "ko-gu",
+              "target": "구",
+              "roman": "gu",
+              "en": "9 (sino-Korean)",
+              "accept": [
+                "9"
+              ]
+            },
+            {
+              "id": "ko-sip",
+              "target": "십",
+              "roman": "sip",
+              "en": "10 (sino-Korean)",
+              "accept": [
+                "10"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "u5-l2",
+          "title": "Native Korean 1-10",
+          "kind": "word",
+          "intro": [
+            "Native Korean numbers are used for counting things (cups, people) and for age. They are harder, so learn them in small steps."
+          ],
+          "items": [
+            {
+              "id": "ko-hana",
+              "target": "하나",
+              "roman": "ha-na",
+              "en": "1 (native Korean)",
+              "accept": [
+                "1"
+              ]
+            },
+            {
+              "id": "ko-dul",
+              "target": "둘",
+              "roman": "dul",
+              "en": "2 (native Korean)",
+              "accept": [
+                "2"
+              ]
+            },
+            {
+              "id": "ko-set",
+              "target": "셋",
+              "roman": "set",
+              "en": "3 (native Korean)",
+              "accept": [
+                "3"
+              ]
+            },
+            {
+              "id": "ko-net",
+              "target": "넷",
+              "roman": "net",
+              "en": "4 (native Korean)",
+              "accept": [
+                "4"
+              ]
+            },
+            {
+              "id": "ko-daseot",
+              "target": "다섯",
+              "roman": "da-seot",
+              "en": "5 (native Korean)",
+              "accept": [
+                "5"
+              ]
+            },
+            {
+              "id": "ko-yeoseot",
+              "target": "여섯",
+              "roman": "yeo-seot",
+              "en": "6 (native Korean)",
+              "accept": [
+                "6"
+              ]
+            },
+            {
+              "id": "ko-ilgop",
+              "target": "일곱",
+              "roman": "il-gop",
+              "en": "7 (native Korean)",
+              "accept": [
+                "7"
+              ]
+            },
+            {
+              "id": "ko-yeodeol",
+              "target": "여덟",
+              "roman": "yeo-deol",
+              "en": "8 (native Korean)",
+              "accept": [
+                "8"
+              ]
+            },
+            {
+              "id": "ko-ahop",
+              "target": "아홉",
+              "roman": "a-hop",
+              "en": "9 (native Korean)",
+              "accept": [
+                "9"
+              ]
+            },
+            {
+              "id": "ko-yeol",
+              "target": "열",
+              "roman": "yeol",
+              "en": "10 (native Korean)",
+              "accept": [
+                "10"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "u5-l3",
+          "title": "Money",
+          "kind": "word",
+          "intro": [
+            "Korean currency is the won (원). Big numbers are built from the sino numbers: 오천 원 = 5 + thousand = 5,000 won."
+          ],
+          "items": [
+            {
+              "id": "ko-won",
+              "target": "원",
+              "roman": "won",
+              "en": "won (currency)"
+            },
+            {
+              "id": "ko-cheon",
+              "target": "천",
+              "roman": "cheon",
+              "en": "thousand"
+            },
+            {
+              "id": "ko-man",
+              "target": "만",
+              "roman": "man",
+              "en": "ten thousand"
+            },
+            {
+              "id": "ko-olma",
+              "target": "얼마예요?",
+              "roman": "eol-ma-ye-yo",
+              "en": "how much is it?"
+            },
+            {
+              "id": "ko-ocheon",
+              "target": "오천 원이에요",
+              "roman": "o-cheon wo-ni-e-yo",
+              "kind": "phrase",
+              "en": "it's 5,000 won"
+            },
+            {
+              "id": "ko-manwon",
+              "target": "만 원이에요",
+              "roman": "man wo-ni-e-yo",
+              "kind": "phrase",
+              "en": "it's 10,000 won"
+            }
+          ]
+        }
+      ],
+      "goals": [
+        "speak",
+        "read"
+      ]
+    },
+    {
+      "id": "u6",
+      "title": "Cafe & Food",
+      "description": "Order food and drinks, and react like a local.",
+      "lessons": [
+        {
+          "id": "u6-l1",
+          "title": "Food & Drink",
+          "kind": "word",
+          "items": [
+            {
+              "id": "ko-keopi",
+              "target": "커피",
+              "roman": "keo-pi",
+              "en": "coffee"
+            },
+            {
+              "id": "ko-cha",
+              "target": "차",
+              "roman": "cha",
+              "en": "tea"
+            },
+            {
+              "id": "ko-uyu",
+              "target": "우유",
+              "roman": "u-yu",
+              "en": "milk"
+            },
+            {
+              "id": "ko-juseu",
+              "target": "주스",
+              "roman": "ju-seu",
+              "en": "juice"
+            },
+            {
+              "id": "ko-ppang",
+              "target": "빵",
+              "roman": "ppang",
+              "en": "bread"
+            },
+            {
+              "id": "ko-gimchi",
+              "target": "김치",
+              "roman": "gim-chi",
+              "en": "kimchi"
+            },
+            {
+              "id": "ko-bibimbap",
+              "target": "비빔밥",
+              "roman": "bi-bim-bap",
+              "en": "bibimbap (mixed rice)"
+            },
+            {
+              "id": "ko-bulgogi",
+              "target": "불고기",
+              "roman": "bul-go-gi",
+              "en": "bulgogi (marinated beef)"
+            }
+          ]
+        },
+        {
+          "id": "u6-l2",
+          "title": "Ordering",
+          "kind": "phrase",
+          "intro": [
+            "The magic phrase is ___ 주세요, which means 'please give me ___'. Put any noun in front."
+          ],
+          "items": [
+            {
+              "id": "ko-eoseo",
+              "target": "어서 오세요",
+              "roman": "eo-seo o-se-yo",
+              "en": "welcome (said by staff)"
+            },
+            {
+              "id": "ko-keopijuseyo",
+              "target": "커피 주세요",
+              "roman": "keo-pi ju-se-yo",
+              "en": "coffee, please"
+            },
+            {
+              "id": "ko-muljuseyo",
+              "target": "물 주세요",
+              "roman": "mul ju-se-yo",
+              "en": "water, please"
+            },
+            {
+              "id": "ko-igeo",
+              "target": "이거 주세요",
+              "roman": "i-geo ju-se-yo",
+              "en": "this one, please"
+            },
+            {
+              "id": "ko-menyu",
+              "target": "메뉴 주세요",
+              "roman": "me-nyu ju-se-yo",
+              "en": "the menu, please"
+            },
+            {
+              "id": "ko-yeogiyo",
+              "target": "여기요",
+              "roman": "yeo-gi-yo",
+              "en": "excuse me (calling staff)"
+            },
+            {
+              "id": "ko-gyesan",
+              "target": "계산해 주세요",
+              "roman": "gye-san-hae ju-se-yo",
+              "en": "the bill, please"
+            }
+          ]
+        },
+        {
+          "id": "u6-l3",
+          "title": "Reactions",
+          "kind": "phrase",
+          "items": [
+            {
+              "id": "ko-masisseoyo",
+              "target": "맛있어요",
+              "roman": "ma-si-sseo-yo",
+              "en": "it's delicious"
+            },
+            {
+              "id": "ko-maseopseoyo",
+              "target": "맛없어요",
+              "roman": "ma-seop-seo-yo",
+              "en": "it's not tasty"
+            },
+            {
+              "id": "ko-maewoyo",
+              "target": "매워요",
+              "roman": "mae-wo-yo",
+              "en": "it's spicy"
+            },
+            {
+              "id": "ko-baegopayo",
+              "target": "배고파요",
+              "roman": "bae-go-pa-yo",
+              "en": "I'm hungry"
+            },
+            {
+              "id": "ko-baebulleoyo",
+              "target": "배불러요",
+              "roman": "bae-bul-leo-yo",
+              "en": "I'm full"
+            },
+            {
+              "id": "ko-jalmeokgesseumnida",
+              "target": "잘 먹겠습니다",
+              "roman": "jal meok-ge-sseum-ni-da",
+              "en": "I will eat well (said before eating)"
+            },
+            {
+              "id": "ko-jalmeogeotseumnida",
+              "target": "잘 먹었습니다",
+              "roman": "jal meo-geot-seum-ni-da",
+              "en": "I ate well (said after eating)"
+            }
+          ]
+        }
+      ],
+      "dialogues": [
+        {
+          "id": "d-cafe",
+          "title": "At the cafe",
+          "lines": [
+            {
+              "who": "A",
+              "target": "어서 오세요.",
+              "roman": "eo-seo o-se-yo",
+              "en": "Welcome."
+            },
+            {
+              "who": "B",
+              "target": "안녕하세요. 커피 주세요.",
+              "roman": "an-nyeong-ha-se-yo. keo-pi ju-se-yo",
+              "en": "Hello. Coffee, please."
+            },
+            {
+              "who": "A",
+              "target": "오천 원이에요.",
+              "roman": "o-cheon wo-ni-e-yo",
+              "en": "It's 5,000 won."
+            },
+            {
+              "who": "B",
+              "target": "네, 감사합니다.",
+              "roman": "ne, gam-sa-ham-ni-da",
+              "en": "Yes, thank you."
+            },
+            {
+              "who": "A",
+              "target": "안녕히 가세요.",
+              "roman": "an-nyeong-hi ga-se-yo",
+              "en": "Goodbye."
+            },
+            {
+              "who": "B",
+              "target": "안녕히 계세요.",
+              "roman": "an-nyeong-hi gye-se-yo",
+              "en": "Goodbye."
+            }
+          ]
+        },
+        {
+          "id": "d-restaurant",
+          "title": "At the restaurant",
+          "lines": [
+            {
+              "who": "A",
+              "target": "어서 오세요.",
+              "roman": "eo-seo o-se-yo",
+              "en": "Welcome."
+            },
+            {
+              "who": "B",
+              "target": "메뉴 주세요.",
+              "roman": "me-nyu ju-se-yo",
+              "en": "The menu, please."
+            },
+            {
+              "who": "A",
+              "target": "네, 여기 있어요.",
+              "roman": "ne, yeo-gi i-sseo-yo",
+              "en": "Yes, here you are."
+            },
+            {
+              "who": "B",
+              "target": "비빔밥 주세요.",
+              "roman": "bi-bim-bap ju-se-yo",
+              "en": "Bibimbap, please."
+            },
+            {
+              "who": "A",
+              "target": "네, 알겠습니다.",
+              "roman": "ne, al-get-seum-ni-da",
+              "en": "Yes, understood."
+            },
+            {
+              "who": "B",
+              "target": "잘 먹겠습니다.",
+              "roman": "jal meok-ge-sseum-ni-da",
+              "en": "I will eat well."
+            },
+            {
+              "who": "A",
+              "target": "맛있어요?",
+              "roman": "ma-si-sseo-yo",
+              "en": "Is it delicious?"
+            },
+            {
+              "who": "B",
+              "target": "네, 맛있어요.",
+              "roman": "ne, ma-si-sseo-yo",
+              "en": "Yes, it's delicious."
+            },
+            {
+              "who": "B",
+              "target": "계산해 주세요.",
+              "roman": "gye-san-hae ju-se-yo",
+              "en": "The bill, please."
+            }
+          ]
+        }
+      ],
+      "goals": [
+        "speak",
+        "read"
+      ]
+    },
+    {
+      "id": "u7",
+      "title": "Getting Around",
+      "goals": [
+        "speak",
+        "read"
+      ],
+      "description": "Ask where things are and understand simple directions.",
+      "lessons": [
+        {
+          "id": "u7-l1",
+          "title": "Places & Transport",
+          "kind": "word",
+          "items": [
+            {
+              "id": "ko-eodi",
+              "target": "어디",
+              "roman": "eo-di",
+              "en": "where"
+            },
+            {
+              "id": "ko-yeogi",
+              "target": "여기",
+              "roman": "yeo-gi",
+              "en": "here"
+            },
+            {
+              "id": "ko-jeogi",
+              "target": "저기",
+              "roman": "jeo-gi",
+              "en": "over there"
+            },
+            {
+              "id": "ko-hwajangsil",
+              "target": "화장실",
+              "roman": "hwa-jang-sil",
+              "en": "restroom"
+            },
+            {
+              "id": "ko-jihacheol",
+              "target": "지하철",
+              "roman": "ji-ha-cheol",
+              "en": "subway"
+            },
+            {
+              "id": "ko-taeksi",
+              "target": "택시",
+              "roman": "taek-si",
+              "en": "taxi"
+            },
+            {
+              "id": "ko-beoseu",
+              "target": "버스",
+              "roman": "beo-seu",
+              "en": "bus"
+            }
+          ]
+        },
+        {
+          "id": "u7-l2",
+          "title": "Asking & Directions",
+          "kind": "phrase",
+          "intro": [
+            "To ask where something is, say the place + 이/가 + 어디예요? Example: 화장실이 어디예요? means 'Where is the restroom?'"
+          ],
+          "items": [
+            {
+              "id": "ko-hwajangsiri",
+              "target": "화장실이 어디예요?",
+              "roman": "hwa-jang-si-ri eo-di-ye-yo",
+              "en": "where is the restroom?"
+            },
+            {
+              "id": "ko-jihacheori",
+              "target": "지하철이 어디예요?",
+              "roman": "ji-ha-cheo-ri eo-di-ye-yo",
+              "en": "where is the subway?"
+            },
+            {
+              "id": "ko-yeogiga",
+              "target": "여기가 어디예요?",
+              "roman": "yeo-gi-ga eo-di-ye-yo",
+              "en": "where is this place?"
+            },
+            {
+              "id": "ko-jeogiyeyo",
+              "target": "저기예요",
+              "roman": "jeo-gi-ye-yo",
+              "en": "it's over there"
+            },
+            {
+              "id": "ko-oreunjjok",
+              "target": "오른쪽이에요",
+              "roman": "o-reun-jjo-gi-e-yo",
+              "en": "it's on the right"
+            },
+            {
+              "id": "ko-oenjjok",
+              "target": "왼쪽이에요",
+              "roman": "oen-jjo-gi-e-yo",
+              "en": "it's on the left"
+            },
+            {
+              "id": "ko-dowajuseyo",
+              "target": "도와주세요",
+              "roman": "do-wa-ju-se-yo",
+              "en": "please help me"
+            }
+          ]
+        }
+      ],
+      "dialogues": [
+        {
+          "id": "d-restroom",
+          "title": "Where is the restroom?",
+          "lines": [
+            {
+              "who": "B",
+              "target": "실례합니다.",
+              "roman": "sil-lye-ham-ni-da",
+              "en": "Excuse me."
+            },
+            {
+              "who": "A",
+              "target": "네.",
+              "roman": "ne",
+              "en": "Yes?"
+            },
+            {
+              "who": "B",
+              "target": "화장실이 어디예요?",
+              "roman": "hwa-jang-si-ri eo-di-ye-yo",
+              "en": "Where is the restroom?"
+            },
+            {
+              "who": "A",
+              "target": "저기예요.",
+              "roman": "jeo-gi-ye-yo",
+              "en": "It's over there."
+            },
+            {
+              "who": "B",
+              "target": "감사합니다.",
+              "roman": "gam-sa-ham-ni-da",
+              "en": "Thank you."
+            },
+            {
+              "who": "A",
+              "target": "천만에요.",
+              "roman": "cheon-ma-ne-yo",
+              "en": "You're welcome."
+            }
+          ]
+        },
+        {
+          "id": "d-help",
+          "title": "I need help",
+          "lines": [
+            {
+              "who": "B",
+              "target": "도와주세요.",
+              "roman": "do-wa-ju-se-yo",
+              "en": "Please help me."
+            },
+            {
+              "who": "A",
+              "target": "네, 괜찮아요?",
+              "roman": "ne, gwaen-chan-a-yo",
+              "en": "Yes, are you okay?"
+            },
+            {
+              "who": "B",
+              "target": "지하철이 어디예요?",
+              "roman": "ji-ha-cheo-ri eo-di-ye-yo",
+              "en": "Where is the subway?"
+            },
+            {
+              "who": "A",
+              "target": "오른쪽이에요.",
+              "roman": "o-reun-jjo-gi-e-yo",
+              "en": "It's on the right."
+            },
+            {
+              "who": "B",
+              "target": "감사합니다.",
+              "roman": "gam-sa-ham-ni-da",
+              "en": "Thank you."
+            },
+            {
+              "who": "A",
+              "target": "천만에요.",
+              "roman": "cheon-ma-ne-yo",
+              "en": "You're welcome."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
