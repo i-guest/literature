@@ -1,0 +1,1748 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-gg6G1fVZfcx6HO3sVS8uol51VhDqAtQpNb1euIqMKxA='; style-src 'sha256-o58GzoSkEN8/781vSEOHN0OBx3nMLijrRT6PmHz5cZ8='; img-src data:; connect-src 'self'; base-uri 'none'; form-action 'none'" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lingo Path - learn to speak from scratch</title>
+    <link rel="icon" href="data:," />
+    <style>:root,
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #17181d;
+  --bg-soft: #1d1f26;
+  --card: #22252d;
+  --card-2: #2a2d37;
+  --line: #343845;
+  --ink: #e6e8ed;
+  --ink-strong: #f4f5f8;
+  --muted: #98a0af;
+  --brand: #5b93f5;
+  --brand-d: #4780e8;
+  --brand-ink: #0b1630;
+  --brand-soft: rgba(91, 147, 245, 0.14);
+  --good: #4cc790;
+  --good-bg: rgba(76, 199, 144, 0.14);
+  --bad: #f0706f;
+  --bad-bg: rgba(240, 112, 111, 0.14);
+  --warn: #e3b25b;
+  --note-bg: rgba(227, 178, 91, 0.1);
+  --note-line: rgba(227, 178, 91, 0.35);
+  --hero-a: #25407a;
+  --hero-b: #3b2f73;
+  --shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+  --radius: 16px;
+  font-family: 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', 'Apple SD Gothic Neo', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f4f1ea;
+  --bg-soft: #ece8de;
+  --card: #fffdf8;
+  --card-2: #f6f2e8;
+  --line: #ddd7c8;
+  --ink: #2b2a28;
+  --ink-strong: #1a1917;
+  --muted: #75716a;
+  --brand: #2f62d6;
+  --brand-d: #254fb3;
+  --brand-ink: #ffffff;
+  --brand-soft: rgba(47, 98, 214, 0.1);
+  --good: #1f9d68;
+  --good-bg: rgba(31, 157, 104, 0.12);
+  --bad: #d64545;
+  --bad-bg: rgba(214, 69, 69, 0.1);
+  --warn: #a9690c;
+  --note-bg: #fbf3da;
+  --note-line: #ecd9a0;
+  --hero-a: #3a63c4;
+  --hero-b: #5b49b0;
+  --shadow: 0 6px 20px rgba(60, 50, 30, 0.12);
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); line-height: 1.5; letter-spacing: -0.005em; }
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 3px;
+  z-index: 10;
+  opacity: 0.75;
+  background: linear-gradient(90deg, #2f6fe4 0 20%, #d9534f 20% 40%, #e6b43c 40% 60%, #d8d4c8 60% 80%, #3a3a3a 80% 100%);
+}
+:lang(ko) { word-break: keep-all; }
+h1, h2 { margin: 0 0 8px; color: var(--ink-strong); letter-spacing: -0.02em; }
+button { color: inherit; }
+:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+.muted { color: var(--muted); margin: 0 0 12px; }
+.center { text-align: center; }
+
+.page { max-width: 880px; margin: 0 auto; padding: 20px 16px 48px; }
+.top { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.logo { font-weight: 800; font-size: 22px; color: var(--brand); letter-spacing: -0.03em; }
+.lang-name, .lang-select { font-size: 15px; font-weight: 600; color: var(--ink); }
+.lang-select { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 4px 8px; }
+.chips { display: flex; gap: 8px; align-items: center; }
+.chip { background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-weight: 700; font-size: 13px; }
+.chip-btn { font: inherit; font-weight: 700; font-size: 13px; cursor: pointer; color: var(--muted); }
+.chip-btn:hover { color: var(--ink); border-color: var(--brand); }
+
+.seg { display: flex; gap: 4px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 4px; margin-bottom: 14px; }
+.seg-btn { flex: 1; font: inherit; font-weight: 700; font-size: 14px; border: 0; background: transparent; color: var(--muted); padding: 10px 8px; border-radius: 10px; cursor: pointer; }
+.seg-btn:hover:not(.on) { color: var(--ink); }
+.seg-btn.on { background: var(--brand); color: var(--brand-ink); }
+
+.banner { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 14px; display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center; font-size: 13px; margin-bottom: 16px; }
+.banner .ok { color: var(--good); }
+.banner .warn { color: var(--warn); }
+
+.btn { font: inherit; font-weight: 700; border: 1.5px solid var(--line); background: var(--card-2); color: var(--ink); border-radius: 12px; padding: 10px 16px; cursor: pointer; transition: border-color 0.15s, background 0.15s, transform 0.1s; }
+.btn:hover:not(:disabled) { border-color: var(--brand); }
+.btn:active:not(:disabled) { transform: scale(0.98); }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn.primary { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); }
+.btn.primary:hover:not(:disabled) { background: var(--brand-d); border-color: var(--brand-d); }
+.btn.wide { width: 100%; padding: 14px; font-size: 17px; }
+.btn.small { padding: 6px 10px; font-size: 13px; }
+.btn.ghost { border-color: transparent; background: transparent; color: var(--muted); }
+.btn.danger { color: var(--bad); }
+.btn.audio { background: var(--brand-soft); border-color: transparent; color: var(--brand); }
+
+.welcome { text-align: center; margin: 12px 0 20px; }
+.welcome h1 { font-size: 26px; }
+.goal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.goal-card { text-align: left; font: inherit; background: var(--card); border: 1.5px solid var(--line); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 10px; cursor: pointer; box-shadow: var(--shadow); transition: border-color 0.15s, transform 0.15s; }
+.goal-card:hover { border-color: var(--brand); transform: translateY(-2px); }
+.goal-card h2 { font-size: 22px; margin: 0; }
+.goal-card p { margin: 0; color: var(--muted); }
+.goal-card ul { margin: 4px 0 8px; padding-left: 20px; color: var(--ink); }
+.goal-card li { margin: 3px 0; }
+.goal-card .btn { align-self: flex-start; margin-top: auto; }
+
+.hero { background: linear-gradient(135deg, var(--hero-a), var(--hero-b)); color: #fff; border-radius: 20px; padding: 22px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-bottom: 22px; box-shadow: var(--shadow); }
+.hero h1 { font-size: 24px; color: #fff; }
+.hero p { margin: 0; opacity: 0.88; }
+.hero-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.hero .btn { border-color: rgba(255, 255, 255, 0.35); background: rgba(255, 255, 255, 0.12); color: #fff; }
+.hero .btn.primary { background: #fff; color: #23356b; border-color: #fff; }
+
+.unit { margin-bottom: 26px; }
+.lessons { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; }
+.lesson { text-align: left; font: inherit; background: var(--card); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 14px; display: flex; flex-direction: column; gap: 4px; cursor: pointer; transition: border-color 0.15s, transform 0.15s; }
+.lesson:hover:not(:disabled) { border-color: var(--brand); transform: translateY(-1px); }
+.lesson.done { border-color: color-mix(in srgb, var(--good) 55%, var(--line)); }
+.lesson.locked { opacity: 0.45; cursor: not-allowed; background: var(--bg-soft); }
+.lesson.talk-card { background: color-mix(in srgb, var(--warn) 9%, var(--card)); border-color: color-mix(in srgb, var(--warn) 35%, var(--line)); }
+.l-title { font-weight: 700; color: var(--ink-strong); }
+.l-meta { font-size: 12px; color: var(--muted); }
+.l-stars { font-size: 14px; color: var(--warn); font-weight: 700; }
+
+.settings { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+.toggle { display: flex; gap: 8px; align-items: center; cursor: pointer; }
+.toggle input { accent-color: var(--brand); width: 18px; height: 18px; }
+
+.ref-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.ref-row { display: grid; grid-template-columns: 90px 1fr 1.4fr; gap: 10px; align-items: center; text-align: left; font: inherit; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 8px 12px; cursor: pointer; }
+.ref-row:hover { border-color: var(--brand); }
+.ref-target { font-size: 22px; font-weight: 700; color: var(--ink-strong); }
+.ref-roman { color: var(--brand); }
+.ref-en { color: var(--muted); }
+
+.session { max-width: 640px; margin: 0 auto; min-height: 100vh; display: flex; flex-direction: column; }
+.session-top { display: flex; align-items: center; gap: 12px; padding: 18px 16px 10px; }
+.icon-btn { border: 0; background: transparent; font-size: 22px; cursor: pointer; color: var(--muted); border-radius: 8px; padding: 2px 6px; }
+.icon-btn:hover { color: var(--ink); }
+.bar { flex: 1; height: 12px; background: var(--card-2); border-radius: 999px; overflow: hidden; }
+.bar-fill { height: 100%; width: 0; background: var(--good); border-radius: 999px; transition: width 0.3s; }
+.talk-title { font-weight: 800; color: var(--ink-strong); }
+.session-body { flex: 1; padding: 8px 16px 24px; }
+.session-foot { padding: 14px 16px 22px; border-top: 2px solid transparent; display: flex; flex-direction: column; gap: 10px; position: sticky; bottom: 0; background: var(--bg); }
+.session-foot:empty { display: none; }
+.session-foot.good { background: color-mix(in srgb, var(--good) 14%, var(--bg)); border-color: color-mix(in srgb, var(--good) 45%, transparent); }
+.session-foot.bad { background: color-mix(in srgb, var(--bad) 14%, var(--bg)); border-color: color-mix(in srgb, var(--bad) 45%, transparent); }
+.session-foot.good strong { color: var(--good); }
+.session-foot.bad strong { color: var(--bad); }
+.feedback strong { font-size: 18px; }
+.reveal { margin-top: 4px; font-weight: 600; color: var(--ink-strong); }
+
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 24px; text-align: center; box-shadow: var(--shadow); }
+.card.intro { padding: 32px 20px; }
+.kicker { text-transform: uppercase; letter-spacing: 0.08em; font-size: 12px; color: var(--muted); margin-bottom: 8px; font-weight: 700; }
+.lead { font-size: 17px; line-height: 1.6; }
+.note { background: var(--note-bg); border: 1px solid var(--note-line); border-radius: 12px; padding: 10px 14px; text-align: left; }
+.stars { font-size: 36px; color: var(--warn); letter-spacing: 6px; }
+
+.ex { display: flex; flex-direction: column; gap: 14px; align-items: stretch; text-align: center; }
+.prompt { font-size: 20px; margin: 8px 0 0; }
+.big { font-size: 56px; font-weight: 600; line-height: 1.3; color: var(--ink-strong); }
+.big.xl { font-size: 92px; }
+.big.en { font-size: 28px; font-weight: 700; }
+.big.roman { font-size: 44px; color: var(--brand); }
+.sub { font-size: 18px; color: var(--brand); font-weight: 600; }
+.sub.strong { font-size: 24px; }
+.sub.en { color: var(--muted); font-weight: 500; }
+.audio-row { display: flex; gap: 10px; justify-content: center; }
+
+.options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.option { position: relative; font: inherit; background: var(--card); border: 1.5px solid var(--line); border-radius: 14px; padding: 16px 12px; cursor: pointer; display: flex; flex-direction: column; gap: 2px; align-items: center; transition: border-color 0.15s, background 0.15s; }
+.option:hover:not(:disabled) { border-color: var(--brand); background: var(--card-2); }
+.key-hint { position: absolute; top: 6px; left: 8px; font-size: 11px; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; }
+.o-label { font-size: 22px; font-weight: 700; color: var(--ink-strong); }
+.o-sub { font-size: 13px; color: var(--muted); }
+.option.right, .tray.right, .text-input.right, .write-display.right { border-color: var(--good) !important; background: var(--good-bg); }
+.option.wrong, .tray.wrong, .text-input.wrong, .write-display.wrong { border-color: var(--bad) !important; background: var(--bad-bg); }
+.option.sel { border-color: var(--brand); background: var(--brand-soft); }
+.option:disabled { cursor: default; color: var(--ink); }
+
+.text-input { font: inherit; font-size: 20px; text-align: center; padding: 12px; border: 1.5px solid var(--line); border-radius: 12px; background: var(--card); color: var(--ink-strong); }
+.text-input:focus { outline: none; border-color: var(--brand); }
+.text-input::placeholder { color: var(--muted); }
+
+.tray { min-height: 64px; border: 1.5px dashed var(--line); border-radius: 14px; padding: 8px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; align-items: center; }
+.tray.answer { background: var(--card); }
+.tile { font: inherit; font-size: 22px; font-weight: 700; background: var(--card-2); border: 1.5px solid var(--line); border-bottom-width: 4px; border-radius: 10px; padding: 8px 14px; cursor: pointer; color: var(--ink-strong); }
+.tile:hover:not(:disabled) { border-color: var(--brand); }
+
+.match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.col { display: flex; flex-direction: column; gap: 10px; }
+.option.match { padding: 14px 8px; font-weight: 700; font-size: 18px; }
+
+.write { display: flex; flex-direction: column; gap: 12px; }
+.write-display { min-height: 72px; display: flex; align-items: center; justify-content: center; font-size: 38px; font-weight: 600; color: var(--ink-strong); background: var(--card); border: 1.5px solid var(--line); border-radius: 14px; padding: 6px 12px; }
+.write-display .placeholder { font-size: 15px; font-weight: 500; color: var(--muted); }
+.caret { display: inline-block; width: 2px; height: 1.1em; margin-left: 3px; background: var(--brand); animation: blink 1s steps(2) infinite; }
+.write-display.right .caret, .write-display.wrong .caret { display: none; }
+@keyframes blink { 50% { opacity: 0; } }
+.kb { display: flex; flex-direction: column; gap: 6px; align-items: center; user-select: none; }
+.kb-row { display: flex; gap: 5px; justify-content: center; width: 100%; }
+.key { flex: 1 1 0; max-width: 46px; min-width: 0; height: 46px; font: inherit; font-size: 20px; font-weight: 600; background: var(--card-2); color: var(--ink-strong); border: 1px solid var(--line); border-bottom-width: 3px; border-radius: 9px; cursor: pointer; padding: 0; }
+.key:hover { border-color: var(--brand); }
+.key:active { transform: translateY(1px); }
+.key.wide { max-width: 70px; flex-grow: 1.5; }
+.key.shift { max-width: 70px; flex-grow: 1.5; font-size: 18px; color: var(--muted); }
+.key.shift.on { background: var(--brand); color: var(--brand-ink); border-color: var(--brand); }
+.key.space { max-width: 280px; font-size: 14px; color: var(--muted); }
+
+.trace-box { position: relative; width: min(300px, 100%); aspect-ratio: 1; margin: 0 auto; background: var(--card); border: 1.5px solid var(--line); border-radius: 18px; overflow: hidden; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 50% 50%; background-position: center; }
+.trace-ghost { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 210px; font-weight: 500; line-height: 1; color: var(--ink); opacity: 0.16; pointer-events: none; }
+.trace-ghost.model { color: var(--brand); opacity: 0.55; }
+.trace-canvas { position: absolute; inset: 0; width: 100%; height: 100%; touch-action: none; cursor: crosshair; }
+
+.btn.mic { background: var(--brand); color: var(--brand-ink); border-color: var(--brand); padding: 18px; font-size: 18px; border-radius: 999px; }
+.btn.mic.on { background: var(--bad); border-color: var(--bad); color: #fff; animation: pulse 1s infinite; }
+@keyframes pulse { 50% { box-shadow: 0 0 0 10px color-mix(in srgb, var(--bad) 22%, transparent); } }
+.status { min-height: 40px; color: var(--muted); font-size: 15px; }
+.speak-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; align-items: center; }
+.hint-box { background: var(--card); border: 1px dashed var(--line); border-radius: 14px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+.hint-box .big { font-size: 38px; }
+
+.chat { display: flex; flex-direction: column; gap: 10px; margin: 12px 0 16px; }
+.bubble { max-width: 80%; padding: 10px 14px; border-radius: 18px; border: 1px solid var(--line); background: var(--card); }
+.bubble.them { align-self: flex-start; border-bottom-left-radius: 4px; }
+.bubble.me { align-self: flex-end; background: var(--brand-soft); border-color: color-mix(in srgb, var(--brand) 40%, var(--line)); border-bottom-right-radius: 4px; }
+.b-main { font-size: 22px; font-weight: 700; color: var(--ink-strong); }
+.b-sub { color: var(--brand); font-size: 14px; }
+.b-en { color: var(--muted); font-size: 14px; }
+.talk-panel { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 14px; }
+.talk-panel .ex { gap: 10px; }
+.talk-panel .big { font-size: 34px; }
+.talk-panel .prompt { margin-bottom: 8px; }
+
+@media (max-width: 520px) {
+  .big { font-size: 46px; }
+  .big.xl { font-size: 76px; }
+  .ref-row { grid-template-columns: 70px 1fr; }
+  .ref-en { grid-column: 1 / -1; }
+  .seg-btn { font-size: 13px; padding: 9px 4px; }
+  .key { height: 42px; font-size: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+.ex > .btn.small { align-self: center; }
+.speak-actions .status { flex-basis: 100%; min-height: 0; margin: 0; }
+</style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>(function () {
+'use strict';
+const __m = {};
+const __d = (n, fn) => (__m[n] = { fn, exports: {}, started: false });
+const __r = (n) => { const m = __m[n]; if (!m.started) { m.started = true; m.fn(m.exports); } return m.exports; };
+__d('app.js', function (exports) {
+const { h, clear } = __r('ui.js');
+const store = __r('store.js');
+const speech = __r('speech.js');
+const {
+  buildIndex, planLesson, planReview, applySession, dueItemIds, learnedItemIds, updateStreak, sayText, lessonsForGoal, unitsForGoal,
+} = __r('engine.js');
+const { runSession } = __r('session.js');
+const { runTalk } = __r('talk.js');
+
+const root = document.getElementById('app');
+const app = {
+  root,
+  course: null,
+  index: null,
+  state: null,
+  epoch: 0,
+  keyHandler: null,
+  say: (text, { slow = false } = {}) => speech.speak(text, app.course.speechLang, { rate: slow || app.state.settings.slow ? 0.6 : 0.9 }),
+  stopAudio: () => (speech.stopSpeaking(), speech.stopListening()),
+};
+let languages = [];
+let offVoices = null;
+
+const GOAL_INFO = {
+  speak: {
+    name: 'Speak & Communicate',
+    short: 'Speak',
+    blurb: 'Learn useful phrases by ear and by mouth. Romanization is always shown, so you can start talking on day one.',
+    bullets: ['Listening and speaking drills', 'Say it in Korean from English prompts', 'Role-play conversations', 'No writing system required'],
+  },
+  read: {
+    name: 'Read & Write',
+    short: 'Read & Write',
+    blurb: 'Learn Hangul from the very first letter, then read, type and handwrite Korean.',
+    bullets: ['Letters, sounds and spelling rules', 'Dictation with an on-screen Korean keyboard', 'Handwriting practice on a canvas', 'Sentence building and reading aloud'],
+  },
+};
+
+const persist = () => store.save(app.course.id, app.state);
+const navigate = (hash) => (location.hash === hash ? route() : (location.hash = hash));
+const goal = () => app.state.goal;
+const completed = () => app.state.completed[goal()];
+document.addEventListener('keydown', (e) => app.keyHandler && app.keyHandler(e));
+
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+}
+
+const LANG_DIR = 'languages/';
+const LANG_ID = /^[a-z]{2,3}(-[a-z0-9]{2,8})?$/;
+
+async function getJson(url) {
+  const res = await fetch(url, { cache: 'no-cache' });
+  if (!res.ok) throw new Error(`${url}: HTTP ${res.status}`);
+  return res.json();
+}
+
+function setCourse(course) {
+  if (!LANG_ID.test(course.id) || !Array.isArray(course.units)) throw new Error('Not a valid language file');
+  app.course = course;
+  app.index = buildIndex(course);
+  app.state = store.load(course.id);
+  store.setLang(course.id);
+}
+
+async function loadCourse(id) {
+  setCourse(await getJson(LANG_DIR + languages.find((l) => l.id === id).file));
+}
+
+const goalLessons = () => lessonsForGoal(app.index, goal());
+const unlocked = (lesson) => {
+  if (app.state.settings.unlockAll) return true;
+  const list = goalLessons();
+  const i = list.indexOf(lesson);
+  return i === 0 || (i > 0 && !!completed()[list[i - 1].id]);
+};
+const unitDone = (unit) => unit.lessons.every((l) => completed()[l.id]);
+
+function voiceBanner() {
+  const lang = app.course.speechLang;
+  const el = h('div', { class: 'banner' });
+  const update = () => {
+    const voice = speech.ttsSupported && speech.findVoice(lang);
+    el.replaceChildren(
+      voice
+        ? h('span', { class: 'ok' }, `Voice ready: ${voice.name}`)
+        : h('span', { class: 'warn' }, `No ${app.course.name} voice found. Install one in your OS or browser speech settings (Windows: Settings > Time & language > Speech), or try Microsoft Edge.`),
+      speech.asrSupported
+        ? h('span', { class: 'ok' }, 'Speaking practice: available')
+        : h('span', { class: 'warn' }, 'Speaking practice needs Chrome or Edge. You can still self-check.'),
+      h('button', { class: 'btn small', onclick: () => app.say(app.course.sample) }, '\u25B6 Test voice'));
+  };
+  update();
+  offVoices && offVoices();
+  offVoices = speech.onVoicesChanged(update);
+  return el;
+}
+
+function header() {
+  const s = app.state;
+  const theme = document.documentElement.dataset.theme;
+  return h('header', { class: 'top' },
+    h('div', { class: 'brand' }, h('span', { class: 'logo' }, 'Lingo Path'),
+      languages.length > 1
+        ? h('select', { class: 'lang-select', 'aria-label': 'Language', onchange: async (e) => { await loadCourse(e.target.value); route(); } },
+            languages.map((l) => h('option', { value: l.id, selected: l.id === app.course.id }, `${l.name} ${l.native}`)))
+        : h('span', { class: 'lang-name', lang: app.course.speechLang }, `${app.course.name} ${app.course.native}`)),
+    h('div', { class: 'chips' },
+      h('span', { class: 'chip' }, `Streak ${s.streak}`),
+      h('span', { class: 'chip' }, `XP ${s.xp}`),
+      h('button', { class: 'chip chip-btn', 'aria-label': 'Toggle light and dark theme', onclick: () => { const t = theme === 'dark' ? 'light' : 'dark'; store.setTheme(t); applyTheme(t); route(); } }, theme === 'dark' ? 'Light' : 'Dark')));
+}
+
+function setGoal(g) {
+  app.state = { ...app.state, goal: g };
+  persist();
+  navigate('#/');
+}
+
+function renderGoalPicker() {
+  const card = (g) => {
+    const info = GOAL_INFO[g];
+    return h('button', { class: 'goal-card', onclick: () => setGoal(g) },
+      h('h2', {}, info.name),
+      h('p', {}, info.blurb),
+      h('ul', {}, info.bullets.map((b) => h('li', {}, b))),
+      h('span', { class: 'btn primary' }, `Choose ${info.short}`));
+  };
+  clear(root);
+  root.append(h('div', { class: 'page' }, header(),
+    h('section', { class: 'welcome' },
+      h('h1', {}, `What do you want to do with ${app.course.name}?`),
+      h('p', { class: 'muted' }, 'Pick a goal. You can switch at any time. Each goal has its own path, and vocabulary reviews are shared.')),
+    h('div', { class: 'goal-grid' }, card('speak'), card('read'))));
+  window.scrollTo(0, 0);
+}
+
+function goalSwitch() {
+  return h('div', { class: 'seg', role: 'tablist', 'aria-label': 'Learning goal' },
+    ['speak', 'read'].map((g) =>
+      h('button', { class: `seg-btn ${goal() === g ? 'on' : ''}`, role: 'tab', 'aria-selected': goal() === g ? 'true' : 'false', onclick: () => goal() !== g && setGoal(g) }, GOAL_INFO[g].name)));
+}
+
+function renderHome() {
+  if (!goal()) return renderGoalPicker();
+  const s = app.state;
+  const due = dueItemIds(s.items, app.index, Date.now(), 999).length;
+  const learned = Object.values(s.items).filter((p) => p.box > 0).length;
+  const next = goalLessons().find((l) => !completed()[l.id] && unlocked(l));
+  const page = h('div', { class: 'page' }, header(), goalSwitch(), voiceBanner());
+
+  const actions = [];
+  if (next) actions.push(h('button', { class: 'btn primary', onclick: () => navigate(`#/lesson/${next.id}`) }, `Continue: ${next.title}`));
+  if (due) actions.push(h('button', { class: 'btn', onclick: () => navigate('#/review') }, `Review (${due})`));
+  else if (learned >= 3) actions.push(h('button', { class: 'btn', onclick: () => navigate('#/practice') }, 'Practice what I know'));
+  actions.push(h('button', { class: 'btn', onclick: () => navigate('#/ref') }, 'Reference'));
+  page.append(h('section', { class: 'hero' },
+    h('div', {}, h('h1', {}, next ? (learned ? 'Keep going' : 'Start here') : 'You finished this path!'), h('p', {}, `${learned} items learned${due ? `, ${due} due for review` : ''}. Goal: ${GOAL_INFO[goal()].name}.`)),
+    h('div', { class: 'hero-actions' }, actions)));
+
+  for (const unit of unitsForGoal(app.course, goal())) {
+    const sec = h('section', { class: 'unit' }, h('h2', {}, unit.title), h('p', { class: 'muted' }, unit.description));
+    const grid = h('div', { class: 'lessons' });
+    unit.lessons.forEach((l) => {
+      const lesson = app.index.lessonById.get(l.id);
+      const open = unlocked(lesson);
+      const c = completed()[l.id];
+      grid.append(h('button', { class: `lesson ${c ? 'done' : ''} ${open ? '' : 'locked'}`, disabled: !open, onclick: () => navigate(`#/lesson/${l.id}`) },
+        h('span', { class: 'l-title' }, l.title),
+        h('span', { class: 'l-meta' }, `${l.items.length} items`),
+        h('span', { class: 'l-stars' }, open ? (c ? '\u2605'.repeat(c.stars) + '\u2606'.repeat(3 - c.stars) : 'Start') : 'Locked')));
+    });
+    (unit.dialogues || []).forEach((d) => {
+      const open = s.settings.unlockAll || unitDone(unit);
+      grid.append(h('button', { class: `lesson talk-card ${s.dialogues[d.id] ? 'done' : ''} ${open ? '' : 'locked'}`, disabled: !open, onclick: () => navigate(`#/talk/${d.id}`) },
+        h('span', { class: 'l-title' }, `Talk: ${d.title}`),
+        h('span', { class: 'l-meta' }, `${d.lines.length} lines`),
+        h('span', { class: 'l-stars' }, open ? (s.dialogues[d.id] ? 'Done' : 'Speak') : 'Finish lessons first')));
+    });
+    sec.append(grid);
+    page.append(sec);
+  }
+
+  const toggle = (key, label) =>
+    h('label', { class: 'toggle' },
+      h('input', { type: 'checkbox', checked: s.settings[key], onchange: (e) => { s.settings[key] = e.target.checked; persist(); renderHome(); } }), label);
+  page.append(h('section', { class: 'unit settings' }, h('h2', {}, 'Settings'),
+    toggle('slow', 'Always play audio slowly'),
+    goal() === 'speak'
+      ? h('p', { class: 'muted' }, 'Romanization is always on for the Speak goal.')
+      : toggle('roman', `Show ${app.course.romanLabel.toLowerCase()} (turn off to train reading)`),
+    toggle('unlockAll', 'Unlock all lessons (skip ahead)'),
+    h('button', { class: 'btn danger small', onclick: () => { if (confirm('Erase all progress for this language?')) { store.reset(app.course.id); app.state = store.load(app.course.id); route(); } } }, 'Reset progress')));
+
+  clear(root);
+  root.append(page);
+  window.scrollTo(0, 0);
+}
+
+function renderReference() {
+  const page = h('div', { class: 'page' }, header(), h('button', { class: 'btn small', onclick: () => navigate('#/') }, '\u2190 Back'), h('h1', {}, 'Reference'), h('p', { class: 'muted' }, 'Tap any row to hear it. Shows lessons you have unlocked.'));
+  for (const lesson of goalLessons().filter(unlocked)) {
+    page.append(h('h2', {}, lesson.title),
+      h('div', { class: 'ref-list' }, lesson.items.map((it) =>
+        h('button', { class: 'ref-row', onclick: () => app.say(sayText(it)) },
+          h('span', { class: 'ref-target', lang: app.course.speechLang }, it.target), h('span', { class: 'ref-roman' }, it.roman), h('span', { class: 'ref-en' }, it.en)))));
+  }
+  clear(root);
+  root.append(page);
+  window.scrollTo(0, 0);
+}
+
+function startLesson(id) {
+  const lesson = app.index.lessonById.get(id);
+  if (!lesson || !lesson.goals.includes(goal()) || !unlocked(lesson)) return navigate('#/');
+  const g = goal();
+  const paragraphs = (g === 'speak' && lesson.introSpeak) || lesson.intro;
+  runSession(app, {
+    introText: paragraphs ? { title: lesson.title, paragraphs } : null,
+    introItems: lesson.items,
+    exercises: planLesson(lesson, app.index, Math.random, g),
+    onExit: () => navigate('#/'),
+    onFinish: (r) => {
+      const xp = r.correctAll * 2 + 10;
+      const prev = completed()[id];
+      app.state = updateStreak({
+        ...app.state,
+        xp: app.state.xp + xp,
+        items: applySession(app.state.items, r.stats),
+        completed: { ...app.state.completed, [g]: { ...completed(), [id]: { stars: Math.max(prev ? prev.stars : 0, r.stars) } } },
+      });
+      persist();
+      return { title: `${lesson.title} complete`, lines: [`+${xp} XP`, `Streak: ${app.state.streak} day${app.state.streak === 1 ? '' : 's'}`], buttonLabel: 'Back to path' };
+    },
+  });
+}
+
+function startReview(mode) {
+  const ids = mode === 'practice' ? learnedItemIds(app.state.items, app.index) : dueItemIds(app.state.items, app.index);
+  if (!ids.length) return navigate('#/');
+  runSession(app, {
+    exercises: planReview(ids, app.index, Math.random, goal()),
+    onExit: () => navigate('#/'),
+    onFinish: (r) => {
+      const xp = r.correctAll * 2;
+      app.state = updateStreak({ ...app.state, xp: app.state.xp + xp, items: applySession(app.state.items, r.stats) });
+      persist();
+      return { title: mode === 'practice' ? 'Practice complete' : 'Review complete', lines: [`+${xp} XP`, 'Items you got right will come back later; misses come back sooner.'], buttonLabel: 'Back to path' };
+    },
+  });
+}
+
+function startTalk(id) {
+  const dialogue = app.index.dialogues.find((d) => d.id === id);
+  if (!dialogue) return navigate('#/');
+  runTalk(app, dialogue, {
+    onExit: () => navigate('#/'),
+    onFinish: ({ mistakes, spoken, turns }) => {
+      app.state = updateStreak({ ...app.state, xp: app.state.xp + 15, dialogues: { ...app.state.dialogues, [id]: true } });
+      persist();
+      return { lines: ['+15 XP', `Spoken correctly: ${spoken} of ${turns} replies`, `Wrong picks: ${mistakes}`] };
+    },
+  });
+}
+
+function route() {
+  app.epoch++;
+  app.stopAudio();
+  app.keyHandler = null;
+  const [, view, arg] = location.hash.split('/');
+  if (!goal() && view) return navigate('#/');
+  if (view === 'lesson') return startLesson(arg);
+  if (view === 'review') return startReview('due');
+  if (view === 'practice') return startReview('practice');
+  if (view === 'talk') return startTalk(arg);
+  if (view === 'ref') return renderReference();
+  renderHome();
+}
+
+function renderFilePicker(reason) {
+  const input = h('input', { type: 'file', accept: '.json,application/json', hidden: true, onchange: async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    try {
+      const course = JSON.parse(await file.text());
+      setCourse(course);
+      languages = [{ id: course.id, name: course.name, native: course.native }];
+      start();
+    } catch (err) {
+      status.textContent = `That file could not be used: ${err.message}`;
+    }
+  } });
+  const status = h('p', { class: 'status', role: 'alert' });
+  clear(root);
+  root.append(h('div', { class: 'page' },
+    h('section', { class: 'welcome' },
+      h('h1', {}, 'Choose a language file'),
+      h('p', { class: 'muted' }, 'The language files could not be loaded automatically. This usually means the page was opened straight from disk. Pick a file from the languages folder (for example ko.json), or host the folder on GitHub Pages.'),
+      h('label', { class: 'btn primary' }, 'Choose language file', input),
+      status)));
+  console.warn(reason);
+}
+
+function start() {
+  window.removeEventListener('hashchange', route);
+  window.addEventListener('hashchange', route);
+  route();
+}
+
+async function boot() {
+  applyTheme(store.getTheme());
+  try {
+    languages = await getJson(`${LANG_DIR}index.json`);
+    const id = languages.find((l) => l.id === store.getLang())?.id || languages[0].id;
+    await loadCourse(id);
+    start();
+  } catch (err) {
+    renderFilePicker(err);
+  }
+}
+
+boot();
+
+Object.assign(exports, {  });
+});
+__d('ui.js', function (exports) {
+function h(tag, props = {}, ...kids) {
+  const el = document.createElement(tag);
+  for (const [k, v] of Object.entries(props || {})) {
+    if (v == null || v === false) continue;
+    if (k === 'class') el.className = v;
+    else if (k.startsWith('on')) el.addEventListener(k.slice(2).toLowerCase(), v);
+    else el.setAttribute(k, v === true ? '' : v);
+  }
+  for (const c of kids.flat(Infinity)) {
+    if (c == null || c === false) continue;
+    el.append(c instanceof Node ? c : document.createTextNode(String(c)));
+  }
+  return el;
+}
+
+const clear = (el) => el.replaceChildren();
+
+const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+
+Object.assign(exports, { h, clear, wait });
+});
+__d('store.js', function (exports) {
+const defaults = () => ({
+  goal: null,
+  xp: 0,
+  streak: 0,
+  lastDay: null,
+  completed: { speak: {}, read: {} },
+  dialogues: {},
+  items: {},
+  settings: { slow: false, roman: true, unlockAll: false },
+});
+
+function load(lang) {
+  try {
+    const d = JSON.parse(localStorage.getItem(`lingo:${lang}`)) || {};
+    const base = defaults();
+    const state = { ...base, ...d, settings: { ...base.settings, ...d.settings } };
+    const c = d.completed || {};
+    const flat = Object.keys(c).filter((k) => k !== 'speak' && k !== 'read');
+    state.completed = { speak: { ...c.speak }, read: { ...c.read } };
+    for (const k of flat) state.completed.read[k] = c[k];
+    if (flat.length && !state.goal) state.goal = 'read';
+    return state;
+  } catch {
+    return defaults();
+  }
+}
+
+function save(lang, state) {
+  localStorage.setItem(`lingo:${lang}`, JSON.stringify(state));
+}
+
+function reset(lang) {
+  localStorage.removeItem(`lingo:${lang}`);
+}
+
+const getLang = () => localStorage.getItem('lingo:lang');
+const setLang = (id) => localStorage.setItem('lingo:lang', id);
+const getTheme = () => localStorage.getItem('lingo:theme') || 'dark';
+const setTheme = (t) => localStorage.setItem('lingo:theme', t);
+
+Object.assign(exports, { load, save, reset, getLang, setLang, getTheme, setTheme });
+});
+__d('speech.js', function (exports) {
+const synth = 'speechSynthesis' in window ? window.speechSynthesis : null;
+const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+let voices = [];
+const listeners = new Set();
+const refresh = () => {
+  voices = synth ? synth.getVoices() : [];
+  listeners.forEach((fn) => fn());
+};
+if (synth) {
+  refresh();
+  synth.addEventListener('voiceschanged', refresh);
+}
+
+const ttsSupported = !!synth;
+const asrSupported = !!Recognition;
+const onVoicesChanged = (fn) => (listeners.add(fn), () => listeners.delete(fn));
+
+const norm = (l) => l.replace('_', '-').toLowerCase();
+
+function findVoice(lang) {
+  const base = norm(lang).split('-')[0];
+  const cands = voices.filter((v) => norm(v.lang).startsWith(base));
+  const score = (v) => (norm(v.lang) === norm(lang) ? 2 : 0) + (/natural|neural|google/i.test(v.name) ? 1 : 0);
+  return cands.sort((a, b) => score(b) - score(a))[0] || null;
+}
+
+function speak(text, lang, { rate = 0.9 } = {}) {
+  return new Promise((resolve) => {
+    if (!synth) return resolve();
+    synth.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = lang;
+    u.rate = rate;
+    const v = findVoice(lang);
+    if (v) u.voice = v;
+    const timer = setTimeout(resolve, Math.max(2500, (text.length * 450) / rate));
+    u.onend = u.onerror = () => (clearTimeout(timer), resolve());
+    synth.speak(u);
+  });
+}
+
+const stopSpeaking = () => synth && synth.cancel();
+
+let active = null;
+const isListening = () => !!active;
+
+function listen(lang) {
+  return new Promise((resolve, reject) => {
+    if (!Recognition) return reject(new Error('unsupported'));
+    stopSpeaking();
+    const r = new Recognition();
+    let settled = false;
+    const done = (fn, val) => {
+      if (settled) return;
+      settled = true;
+      active = null;
+      fn(val);
+    };
+    r.lang = lang;
+    r.interimResults = false;
+    r.continuous = false;
+    r.maxAlternatives = 5;
+    r.onresult = (e) => {
+      const res = e.results[0];
+      done(resolve, { alternatives: Array.from(res).map((a) => a.transcript), confidence: res[0].confidence });
+    };
+    r.onerror = (e) => done(reject, new Error(e.error));
+    r.onend = () => done(reject, new Error('no-speech'));
+    active = r;
+    try {
+      r.start();
+    } catch (err) {
+      done(reject, err);
+    }
+  });
+}
+
+const stopListening = () => active && active.stop();
+
+Object.assign(exports, { findVoice, speak, listen, ttsSupported, asrSupported, onVoicesChanged, stopSpeaking, isListening, stopListening });
+});
+__d('engine.js', function (exports) {
+const DAY = 864e5;
+const INTERVALS = [0, 1, 2, 4, 8, 16, 32];
+const MAX_BOX = INTERVALS.length - 1;
+const GOALS = ['speak', 'read'];
+
+function shuffle(arr, rng = Math.random) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+const PUNCT = /[\s.,!?'"\u201c\u201d\u2018\u2019~\-\u2013\u2014:;()/\u3002\u3001\uff1f\uff01\u2026\uff0c]+/g;
+
+function normalizeText(s) {
+  return String(s).normalize('NFC').toLowerCase().replace(PUNCT, '');
+}
+
+const toUnits = (s) => Array.from(normalizeText(s).normalize('NFD'));
+
+function levenshtein(a, b) {
+  const prev = Array.from({ length: b.length + 1 }, (_, i) => i);
+  for (let i = 1; i <= a.length; i++) {
+    let diag = prev[0];
+    prev[0] = i;
+    for (let j = 1; j <= b.length; j++) {
+      const tmp = prev[j];
+      prev[j] = Math.min(prev[j] + 1, prev[j - 1] + 1, diag + (a[i - 1] === b[j - 1] ? 0 : 1));
+      diag = tmp;
+    }
+  }
+  return prev[b.length];
+}
+
+/** Similarity 0..1 compared at the sound-unit level (NFD splits Hangul blocks into jamo). */
+function similarity(a, b) {
+  const x = toUnits(a);
+  const y = toUnits(b);
+  const m = Math.max(x.length, y.length);
+  return m ? 1 - levenshtein(x, y) / m : 1;
+}
+
+function judgeSpeech(heard, targets, { pass = 0.8, close = 0.5 } = {}) {
+  let score = 0;
+  for (const h of [].concat(heard)) for (const t of [].concat(targets)) score = Math.max(score, similarity(h, t));
+  return { score, verdict: score >= pass ? 'pass' : score >= close ? 'close' : 'fail' };
+}
+
+function checkTyped(input, item, fold = []) {
+  const f = (s) => fold.reduce((t, [a, b]) => t.split(a).join(b), normalizeText(s));
+  const typed = f(input);
+  return !!typed && [item.roman, ...(item.romanAlt || []), item.target].some((a) => f(a) === typed);
+}
+
+const checkWritten = (input, item) => !!normalizeText(input) && normalizeText(input) === normalizeText(item.target);
+
+/* ---------- Hangul composition (for the on-screen keyboard) ---------- */
+
+const CHO = Array.from('ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ');
+const JUNG = Array.from('ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ');
+const JONG = ['', ...Array.from('ㄱㄲㄳㄴㄵㄶㄷㄹㄺㄻㄼㄽㄾㄿㅀㅁㅂㅄㅅㅆㅇㅈㅊㅋㅌㅍㅎ')];
+const V_COMBO = { ㅗㅏ: 'ㅘ', ㅗㅐ: 'ㅙ', ㅗㅣ: 'ㅚ', ㅜㅓ: 'ㅝ', ㅜㅔ: 'ㅞ', ㅜㅣ: 'ㅟ', ㅡㅣ: 'ㅢ' };
+const T_COMBO = { ㄱㅅ: 'ㄳ', ㄴㅈ: 'ㄵ', ㄴㅎ: 'ㄶ', ㄹㄱ: 'ㄺ', ㄹㅁ: 'ㄻ', ㄹㅂ: 'ㄼ', ㄹㅅ: 'ㄽ', ㄹㅌ: 'ㄾ', ㄹㅍ: 'ㄿ', ㄹㅎ: 'ㅀ', ㅂㅅ: 'ㅄ' };
+const invert = (o) => Object.fromEntries(Object.entries(o).map(([k, v]) => [v, Array.from(k)]));
+const V_SPLIT = invert(V_COMBO);
+const T_SPLIT = invert(T_COMBO);
+const isVowel = (c) => JUNG.includes(c);
+const isConsonant = (c) => CHO.includes(c) || Object.hasOwn(T_SPLIT, c);
+const SINGLE_FINAL = new Set(JONG.filter((c) => c && !T_SPLIT[c]));
+
+/** Turn a list of jamo (and other characters) into composed Hangul text. */
+function composeHangul(chars) {
+  let out = '';
+  let cur = null;
+  const flush = () => {
+    if (!cur) return;
+    if (cur.l !== undefined && cur.v !== undefined) {
+      out += String.fromCharCode(0xac00 + (CHO.indexOf(cur.l) * 21 + JUNG.indexOf(cur.v)) * 28 + (cur.t ? JONG.indexOf(cur.t) : 0));
+    } else out += cur.l ?? cur.v;
+    cur = null;
+  };
+  for (const c of chars) {
+    if (isVowel(c)) {
+      if (cur && cur.l !== undefined && cur.v !== undefined && cur.t) {
+        const [keep, move] = T_SPLIT[cur.t] ?? ['', cur.t];
+        cur.t = keep || undefined;
+        flush();
+        cur = { l: move, v: c };
+      } else if (cur && cur.l !== undefined && cur.v !== undefined) {
+        const combo = V_COMBO[cur.v + c];
+        if (combo) cur.v = combo;
+        else {
+          flush();
+          cur = { v: c };
+        }
+      } else if (cur && cur.l !== undefined) cur.v = c;
+      else if (cur && cur.v !== undefined && V_COMBO[cur.v + c]) cur.v = V_COMBO[cur.v + c];
+      else {
+        flush();
+        cur = { v: c };
+      }
+    } else if (isConsonant(c)) {
+      if (cur && cur.l !== undefined && cur.v !== undefined && !cur.t && SINGLE_FINAL.has(c)) cur.t = c;
+      else if (cur && cur.t && T_COMBO[cur.t + c]) cur.t = T_COMBO[cur.t + c];
+      else {
+        flush();
+        cur = { l: c };
+      }
+    } else {
+      flush();
+      out += c;
+    }
+  }
+  flush();
+  return out;
+}
+
+/** Split composed Hangul back into individual jamo (inverse of composeHangul). */
+function decomposeHangul(text) {
+  const out = [];
+  for (const ch of Array.from(text.normalize('NFC'))) {
+    const code = ch.charCodeAt(0) - 0xac00;
+    if (code >= 0 && code < 11172) {
+      const t = code % 28;
+      const v = Math.floor(code / 28) % 21;
+      const l = Math.floor(code / 588);
+      out.push(CHO[l], ...(V_SPLIT[JUNG[v]] || [JUNG[v]]));
+      if (t) out.push(...(T_SPLIT[JONG[t]] || [JONG[t]]));
+    } else out.push(...(V_SPLIT[ch] || T_SPLIT[ch] || [ch]));
+  }
+  return out;
+}
+
+/* Physical key (KeyboardEvent.code) -> Dubeolsik jamo, so a normal keyboard works without an IME. */
+const KEY_MAP = {
+  KeyQ: ['ㅂ', 'ㅃ'], KeyW: ['ㅈ', 'ㅉ'], KeyE: ['ㄷ', 'ㄸ'], KeyR: ['ㄱ', 'ㄲ'], KeyT: ['ㅅ', 'ㅆ'], KeyY: ['ㅛ', 'ㅛ'], KeyU: ['ㅕ', 'ㅕ'], KeyI: ['ㅑ', 'ㅑ'], KeyO: ['ㅐ', 'ㅒ'], KeyP: ['ㅔ', 'ㅖ'],
+  KeyA: ['ㅁ', 'ㅁ'], KeyS: ['ㄴ', 'ㄴ'], KeyD: ['ㅇ', 'ㅇ'], KeyF: ['ㄹ', 'ㄹ'], KeyG: ['ㅎ', 'ㅎ'], KeyH: ['ㅗ', 'ㅗ'], KeyJ: ['ㅓ', 'ㅓ'], KeyK: ['ㅏ', 'ㅏ'], KeyL: ['ㅣ', 'ㅣ'],
+  KeyZ: ['ㅋ', 'ㅋ'], KeyX: ['ㅌ', 'ㅌ'], KeyC: ['ㅊ', 'ㅊ'], KeyV: ['ㅍ', 'ㅍ'], KeyB: ['ㅠ', 'ㅠ'], KeyN: ['ㅜ', 'ㅜ'], KeyM: ['ㅡ', 'ㅡ'],
+};
+const KEY_ROWS = [
+  ['KeyQ', 'KeyW', 'KeyE', 'KeyR', 'KeyT', 'KeyY', 'KeyU', 'KeyI', 'KeyO', 'KeyP'],
+  ['KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 'KeyH', 'KeyJ', 'KeyK', 'KeyL'],
+  ['KeyZ', 'KeyX', 'KeyC', 'KeyV', 'KeyB', 'KeyN', 'KeyM'],
+];
+
+/* ---------- Course index ---------- */
+
+function buildIndex(course) {
+  const items = new Map();
+  const lessonById = new Map();
+  const lessons = [];
+  const dialogues = [];
+  for (const unit of course.units) {
+    const goals = unit.goals || GOALS;
+    for (const l of unit.lessons) {
+      const lesson = { ...l, unitId: unit.id, goals, items: [] };
+      for (const it of l.items) {
+        const full = { ...it, kind: it.kind ?? l.kind ?? 'word', lessonId: l.id, unitId: unit.id };
+        items.set(full.id, full);
+        lesson.items.push(full);
+      }
+      lessons.push(lesson);
+      lessonById.set(lesson.id, lesson);
+    }
+    for (const d of unit.dialogues || []) dialogues.push({ ...d, unitId: unit.id, goals });
+  }
+  return { course, items, lessons, lessonById, dialogues, fold: course.romanFold || [] };
+}
+
+const lessonsForGoal = (index, goal) => index.lessons.filter((l) => l.goals.includes(goal));
+const unitsForGoal = (course, goal) => course.units.filter((u) => (u.goals || GOALS).includes(goal));
+
+const sayText = (item) => item.say ?? item.target;
+const acceptList = (item) => [sayText(item), item.target, ...(item.accept || [])];
+
+function tokensOf(item) {
+  if (item.tokens) return item.tokens;
+  const clean = item.target.replace(/[?!.,]/g, '').trim();
+  return clean.includes(' ') ? clean.split(/\s+/) : Array.from(clean);
+}
+
+function pickDistractors(item, index, n, rng, cmp, goal) {
+  const lesson = index.lessonById.get(item.lessonId);
+  const all = [...index.items.values()];
+  const inGoal = (i) => !goal || index.lessonById.get(i.lessonId).goals.includes(goal);
+  const pool = [...shuffle(lesson.items, rng), ...shuffle(all.filter((i) => i.unitId === item.unitId), rng), ...shuffle(all.filter(inGoal), rng), ...shuffle(all, rng)];
+  const seen = new Set([cmp(item)]);
+  const out = [];
+  for (const c of pool) {
+    if (c.id === item.id || c.kind !== item.kind || c.en === item.en) continue;
+    if (item.soundGroup && c.soundGroup === item.soundGroup) continue;
+    const k = cmp(c);
+    if (seen.has(k)) continue;
+    seen.add(k);
+    out.push(c);
+    if (out.length === n) break;
+  }
+  return out;
+}
+
+const canBuild = (item) => item.kind !== 'letter' && tokensOf(item).length >= 2;
+const canWrite = (item) => Array.from(normalizeText(item.target)).length <= 7;
+
+function pickEx(variant, item, index, rng, goal) {
+  const letter = item.kind === 'letter';
+  const labelOf = { listen: (i) => i.target, see: letter ? (i) => i.roman : (i) => i.en, hear: (i) => i.en, meaning: (i) => i.target }[variant];
+  const isTarget = variant === 'listen' || variant === 'meaning';
+  const subOf = isTarget ? (i) => i.roman : () => undefined;
+  const opts = shuffle([item, ...pickDistractors(item, index, 3, rng, labelOf, goal)], rng).map((i) => ({ id: i.id, label: labelOf(i), sub: subOf(i), tgt: isTarget }));
+  const prompts = {
+    listen: 'Which one did you hear?',
+    see: letter ? 'Which sound does this letter make?' : 'What does this mean?',
+    hear: 'What does this mean?',
+    meaning: `Which one means \u201c${item.en}\u201d?`,
+  };
+  const show = {
+    listen: { audio: sayText(item) },
+    see: letter ? { text: item.target, tgt: true } : { text: item.target, sub: item.roman, tgt: true },
+    hear: { audio: sayText(item) },
+    meaning: letter ? { text: item.en } : { text: item.en, cls: 'en' },
+  }[variant];
+  return { type: 'pick', variant, itemId: item.id, prompt: prompts[variant], show, options: opts, answer: item.id, autoplay: variant === 'listen' || variant === 'hear' };
+}
+
+function makeExercise(type, item, index, rng = Math.random, goal) {
+  switch (type) {
+    case 'listenPick': return pickEx('listen', item, index, rng, goal);
+    case 'seePick': return pickEx('see', item, index, rng, goal);
+    case 'hearMeaning': return pickEx('hear', item, index, rng, goal);
+    case 'meaningPick': return pickEx('meaning', item, index, rng, goal);
+    case 'typeRoman':
+      return { type: 'type', itemId: item.id, prompt: item.kind === 'letter' ? 'Type the sound in English letters' : 'Type it in English letters', show: { text: item.target, audio: sayText(item) }, item };
+    case 'writeHangul':
+      return item.kind === 'letter'
+        ? { type: 'write', itemId: item.id, prompt: 'Write the letter that makes this sound', show: { text: item.roman, sub: item.en, audio: sayText(item) }, item }
+        : { type: 'write', itemId: item.id, prompt: 'Listen and write it in Korean', show: { sub: item.en, audio: sayText(item) }, item };
+    case 'trace':
+      return { type: 'trace', itemId: item.id, prompt: `Write the letter for \u201c${item.roman}\u201d`, item };
+    case 'produce':
+      return { type: 'produce', itemId: item.id, prompt: 'How do you say this in Korean?', item, say: sayText(item), accept: acceptList(item) };
+    case 'speak':
+      return { type: 'speak', itemId: item.id, prompt: 'Say it out loud', item, say: sayText(item), accept: acceptList(item) };
+    case 'build': {
+      const solution = tokensOf(item);
+      let tiles = shuffle(solution, rng);
+      for (let i = 0; i < 5 && tiles.join('\u0000') === solution.join('\u0000'); i++) tiles = shuffle(solution, rng);
+      return { type: 'build', itemId: item.id, prompt: 'Build the sentence', show: { text: item.en, audio: sayText(item) }, tiles, solution, sep: item.target.includes(' ') ? ' ' : '' };
+    }
+    default: throw new Error(`unknown exercise type: ${type}`);
+  }
+}
+
+function makeMatch(items, rng = Math.random) {
+  const seen = new Set();
+  const chosen = [];
+  for (const it of shuffle(items, rng)) {
+    const right = it.kind === 'letter' ? it.roman : it.en;
+    if (seen.has(right)) continue;
+    seen.add(right);
+    chosen.push({ id: it.id, left: it.target, right });
+    if (chosen.length === 5) break;
+  }
+  return { type: 'match', prompt: 'Match the pairs', itemIds: chosen.map((c) => c.id), pairs: chosen };
+}
+
+/* Exercises that are graded by the learner or the recogniser rather than exact answers. */
+const SOFT_TYPES = new Set(['speak', 'produce', 'trace']);
+
+const ROUNDS = {
+  read: {
+    letter: [['seePick', 'listenPick'], ['writeHangul', 'listenPick', 'typeRoman']],
+    text: [['seePick', 'hearMeaning'], ['writeHangul', 'meaningPick', 'build', 'typeRoman']],
+  },
+  speak: {
+    letter: [['listenPick', 'seePick'], ['listenPick', 'seePick']],
+    text: [['hearMeaning', 'listenPick'], ['produce', 'meaningPick']],
+  },
+};
+const REVIEW = {
+  read: { letter: ['seePick', 'listenPick', 'writeHangul', 'typeRoman', 'trace'], text: ['hearMeaning', 'meaningPick', 'listenPick', 'typeRoman', 'writeHangul', 'build'] },
+  speak: { letter: ['seePick', 'listenPick'], text: ['hearMeaning', 'meaningPick', 'listenPick', 'produce'] },
+};
+const FEASIBLE = { build: canBuild, writeHangul: canWrite, produce: (it) => it.kind !== 'letter', trace: (it) => it.kind === 'letter' };
+
+function choose(list, i, item) {
+  const ok = list.filter((t) => !FEASIBLE[t] || FEASIBLE[t](item));
+  return ok[i % ok.length];
+}
+const bucket = (item) => (item.kind === 'letter' ? 'letter' : 'text');
+
+function planLesson(lesson, index, rng = Math.random, goal = 'read') {
+  const items = lesson.items.map((i) => index.items.get(i.id));
+  const table = ROUNDS[goal] || ROUNDS.read;
+  const out = [];
+  for (let r = 0; r < 2; r++) {
+    out.push(...shuffle(items, rng).map((it, i) => makeExercise(choose(table[bucket(it)][r], i + r, it), it, index, rng, goal)));
+    if (r === 1 && goal === 'read' && items.length >= 3) out.push(makeMatch(items, rng));
+  }
+  if (goal === 'read') out.push(...shuffle(items.filter(FEASIBLE.trace), rng).map((it) => makeExercise('trace', it, index, rng, goal)));
+  out.push(...shuffle(items, rng).map((it) => makeExercise('speak', it, index, rng, goal)));
+  return out;
+}
+
+function planReview(ids, index, rng = Math.random, goal = 'read') {
+  const out = [];
+  shuffle(ids, rng).forEach((id, n) => {
+    const it = index.items.get(id);
+    const ok = REVIEW[goal][bucket(it)].filter((t) => !FEASIBLE[t] || FEASIBLE[t](it));
+    out.push(makeExercise(ok[Math.floor(rng() * ok.length)], it, index, rng, goal));
+    if (n % 3 === 0) out.push(makeExercise('speak', it, index, rng, goal));
+  });
+  return out;
+}
+
+function applySession(progress, stats, now = Date.now()) {
+  const out = { ...progress };
+  for (const [id, { c, w }] of Object.entries(stats)) {
+    const p = { box: 0, due: 0, seen: 0, right: 0, wrong: 0, ...out[id] };
+    p.seen++;
+    p.right += c;
+    p.wrong += w;
+    if (w > 0) {
+      p.box = Math.max(1, p.box - 1);
+      p.due = now;
+    } else if (c > 0) {
+      p.box = Math.min(MAX_BOX, p.box + 1);
+      p.due = now + INTERVALS[p.box] * DAY;
+    }
+    out[id] = p;
+  }
+  return out;
+}
+
+function dueItemIds(progress, index, now = Date.now(), limit = 12) {
+  return Object.entries(progress)
+    .filter(([id, p]) => index.items.has(id) && p.box > 0 && p.due <= now)
+    .sort((a, b) => a[1].due - b[1].due)
+    .slice(0, limit)
+    .map(([id]) => id);
+}
+
+function learnedItemIds(progress, index, limit = 10, rng = Math.random) {
+  return shuffle(Object.entries(progress).filter(([id, p]) => index.items.has(id) && p.box > 0).map(([id]) => id), rng).slice(0, limit);
+}
+
+const starsFor = (accuracy) => (accuracy >= 0.9 ? 3 : accuracy >= 0.7 ? 2 : 1);
+
+function dayKey(d = new Date()) {
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+
+function updateStreak(state, now = new Date()) {
+  const today = dayKey(now);
+  if (state.lastDay === today) return state;
+  const y = new Date(now);
+  y.setDate(y.getDate() - 1);
+  return { ...state, streak: state.lastDay === dayKey(y) ? state.streak + 1 : 1, lastDay: today };
+}
+
+Object.assign(exports, { shuffle, normalizeText, levenshtein, similarity, judgeSpeech, checkTyped, composeHangul, decomposeHangul, buildIndex, tokensOf, makeExercise, makeMatch, planLesson, planReview, applySession, dueItemIds, learnedItemIds, dayKey, updateStreak, DAY, INTERVALS, MAX_BOX, GOALS, checkWritten, KEY_MAP, KEY_ROWS, lessonsForGoal, unitsForGoal, sayText, acceptList, canBuild, canWrite, SOFT_TYPES, starsFor });
+});
+__d('session.js', function (exports) {
+const { h, clear } = __r('ui.js');
+const { renderExercise, makeEnv } = __r('exercises.js');
+const { sayText, starsFor, SOFT_TYPES } = __r('engine.js');
+
+/**
+ * Runs a teaching session: optional intro cards, then a queue of exercises.
+ * cfg: { introText?: {title, paragraphs}, introItems?: Item[], exercises: Exercise[], onExit(), onFinish(result) -> {title, lines[], buttonLabel} }
+ */
+function runSession(app, cfg) {
+  const epoch = app.epoch;
+  const alive = () => epoch === app.epoch;
+  const say = (text, opts) => (alive() ? app.say(text, opts) : Promise.resolve());
+  const stats = {};
+  const bump = (id, key) => ((stats[id] ||= { c: 0, w: 0 })[key] += 1);
+  const queue = [...cfg.exercises];
+  const total = queue.length;
+  let attempts = 0;
+  let firstTryCorrect = 0;
+  let correctAll = 0;
+  let done = 0;
+
+  const fill = h('div', { class: 'bar-fill' });
+  const body = h('main', { class: 'session-body' });
+  const foot = h('footer', { class: 'session-foot', 'aria-live': 'polite' });
+  const exit = () => {
+    app.stopAudio();
+    app.keyHandler = null;
+    cfg.onExit();
+  };
+  clear(app.root);
+  app.root.append(h('div', { class: 'session' },
+    h('header', { class: 'session-top' }, h('button', { class: 'icon-btn', 'aria-label': 'Close lesson', onclick: exit }, '\u2715'), h('div', { class: 'bar', role: 'progressbar', 'aria-label': 'Lesson progress' }, fill)),
+    body, foot));
+
+  const setProgress = () => (fill.style.width = `${Math.round((done / total) * 100)}%`);
+  const continueButton = (label, fn) => {
+    const b = h('button', { class: 'btn primary wide', onclick: fn }, label);
+    setTimeout(() => alive() && b.focus(), 30);
+    return b;
+  };
+  const waitFor = (render) => new Promise((resolve) => render(resolve));
+
+  async function intro() {
+    if (cfg.introText) {
+      await waitFor((next) => {
+        clear(body);
+        clear(foot);
+        body.append(h('div', { class: 'card' }, h('h1', {}, cfg.introText.title), ...cfg.introText.paragraphs.map((p) => h('p', { class: 'lead' }, p))));
+        foot.append(continueButton('Start', next));
+      });
+    }
+    const items = cfg.introItems || [];
+    for (let i = 0; i < items.length; i++) {
+      const it = items[i];
+      await waitFor((next) => {
+        clear(body);
+        clear(foot);
+        app.keyHandler = null;
+        body.append(h('div', { class: 'card intro' },
+          h('div', { class: 'kicker' }, `New ${it.kind === 'letter' ? 'letter' : it.kind} ${i + 1} / ${items.length}`),
+          h('div', { class: 'big xl', lang: app.course.speechLang }, it.target),
+          h('div', { class: 'sub strong' }, it.roman),
+          h('div', { class: 'sub en' }, it.en),
+          it.note ? h('p', { class: 'note' }, it.note) : null,
+          h('div', { class: 'audio-row' },
+            h('button', { class: 'btn audio', onclick: () => say(sayText(it)) }, '\u25B6 Listen'),
+            h('button', { class: 'btn audio', onclick: () => say(sayText(it), { slow: true }) }, '\u25B6 Slow'))));
+        foot.append(continueButton('Continue', next));
+        setTimeout(() => say(sayText(it)), 250);
+      });
+    }
+  }
+
+  async function exercises() {
+    while (queue.length) {
+      const ex = queue.shift();
+      clear(body);
+      clear(foot);
+      app.keyHandler = null;
+      setProgress();
+      const result = await waitFor((resolve) => {
+        body.append(renderExercise(ex, makeEnv(app, resolve, (fn) => (app.keyHandler = fn))));
+      });
+      app.keyHandler = null;
+      const soft = SOFT_TYPES.has(ex.type);
+      if (!ex.retry && !result.skipped) {
+        const per = result.stats || { [ex.itemId]: { c: result.correct ? 1 : 0, w: result.correct ? 0 : 1 } };
+        for (const [id, s] of Object.entries(per)) {
+          if (s.c) bump(id, 'c');
+          if (s.w) bump(id, 'w');
+        }
+        if (result.correct) correctAll++;
+        if (!soft) {
+          attempts++;
+          if (result.correct) firstTryCorrect++;
+        }
+      }
+      const requeue = !result.correct && !result.skipped && !soft && ex.type !== 'match';
+      if (requeue) queue.push({ ...ex, retry: true });
+      else done++;
+      setProgress();
+      await waitFor((next) => {
+        const good = result.correct;
+        foot.className = `session-foot ${result.skipped ? '' : good ? 'good' : 'bad'}`;
+        foot.append(
+          h('div', { class: 'feedback', role: 'status' },
+            h('strong', {}, result.skipped ? 'Skipped' : good ? 'Correct!' : 'Not quite'),
+            result.reveal ? h('div', { class: 'reveal', lang: app.course.speechLang }, good ? result.reveal : `Answer: ${result.reveal}`) : null),
+          continueButton('Continue', next));
+      });
+      foot.className = 'session-foot';
+    }
+  }
+
+  async function finish() {
+    clear(body);
+    clear(foot);
+    app.keyHandler = null;
+    const accuracy = attempts ? firstTryCorrect / attempts : 1;
+    const stars = starsFor(accuracy);
+    const summary = cfg.onFinish({ stats, accuracy, attempts, firstTryCorrect, correctAll, stars });
+    body.append(h('div', { class: 'card summary' },
+      h('h1', {}, summary.title),
+      h('div', { class: 'stars', 'aria-label': `${stars} of 3 stars` }, '\u2605'.repeat(stars) + '\u2606'.repeat(3 - stars)),
+      h('p', { class: 'lead' }, `Accuracy ${Math.round(accuracy * 100)}%`),
+      ...summary.lines.map((l) => h('p', {}, l))));
+    foot.append(continueButton(summary.buttonLabel || 'Done', exit));
+  }
+
+  (async () => {
+    await intro();
+    await exercises();
+    await finish();
+  })();
+}
+
+Object.assign(exports, { runSession });
+});
+__d('exercises.js', function (exports) {
+const { h } = __r('ui.js');
+const { checkTyped, checkWritten, judgeSpeech } = __r('engine.js');
+const { createHangulInput } = __r('keyboard.js');
+const speech = __r('speech.js');
+
+const audioRow = (env, text) =>
+  h('div', { class: 'audio-row' },
+    h('button', { class: 'btn audio', onclick: () => env.say(text) }, '\u25B6 Listen'),
+    h('button', { class: 'btn audio', onclick: () => env.say(text, { slow: true }) }, '\u25B6 Slow'));
+
+const bigText = (text, cls = '', lang = null) => h('div', { class: `big ${cls}`, lang }, text);
+const addSkip = (actions, skip) => actions.contains(skip) || actions.append(skip);
+
+function renderPick(ex, env) {
+  const root = h('div', { class: 'ex' }, h('h2', { class: 'prompt' }, ex.prompt));
+  if (ex.show.audio) root.append(audioRow(env, ex.show.audio));
+  if (ex.show.text) root.append(bigText(ex.show.text, ex.show.cls, ex.show.tgt ? env.lang : null));
+  if (ex.show.sub && env.roman) root.append(h('div', { class: 'sub' }, ex.show.sub));
+  let locked = false;
+  const buttons = ex.options.map((o, i) =>
+    h('button', { class: 'option', onclick: () => choose(o, i) },
+      h('span', { class: 'key-hint' }, i + 1),
+      h('span', { class: 'o-label', lang: o.tgt ? env.lang : null }, o.label),
+      o.sub && env.roman ? h('span', { class: 'o-sub' }, o.sub) : null));
+  function choose(o, i) {
+    if (locked) return;
+    locked = true;
+    const correct = o.id === ex.answer;
+    buttons[i].classList.add(correct ? 'right' : 'wrong');
+    if (!correct) buttons[ex.options.findIndex((x) => x.id === ex.answer)].classList.add('right');
+    buttons.forEach((b) => (b.disabled = true));
+    env.resolve({ correct, reveal: correct ? undefined : ex.options.find((x) => x.id === ex.answer).label });
+  }
+  root.append(h('div', { class: 'options' }, buttons));
+  env.onKey((e) => {
+    const n = Number(e.key);
+    if (n >= 1 && n <= buttons.length) choose(ex.options[n - 1], n - 1);
+  });
+  if (ex.autoplay) env.later(() => env.say(ex.show.audio), 200);
+  return root;
+}
+
+function renderType(ex, env) {
+  const input = h('input', { class: 'text-input', type: 'text', autocomplete: 'off', autocapitalize: 'off', spellcheck: 'false', placeholder: 'Type here...', 'aria-label': 'Your answer' });
+  const check = h('button', { class: 'btn primary' }, 'Check');
+  const submit = () => {
+    if (!input.value.trim()) return;
+    input.disabled = check.disabled = true;
+    const correct = checkTyped(input.value, ex.item, env.fold);
+    input.classList.add(correct ? 'right' : 'wrong');
+    env.resolve({ correct, reveal: correct ? undefined : `${ex.item.roman}  (${ex.item.target})` });
+  };
+  check.onclick = submit;
+  input.addEventListener('keydown', (e) => e.key === 'Enter' && submit());
+  env.later(() => input.focus(), 50);
+  return h('div', { class: 'ex' }, h('h2', { class: 'prompt' }, ex.prompt), audioRow(env, ex.show.audio), bigText(ex.show.text, '', env.lang), input, check);
+}
+
+function renderWrite(ex, env) {
+  let done = false;
+  const check = h('button', { class: 'btn primary', disabled: true, onclick: () => submit() }, 'Check');
+  const input = createHangulInput({ lang: env.lang, onSubmit: () => submit(), onChange: (t) => (check.disabled = !t.trim() || done) });
+  function submit() {
+    const text = input.getText();
+    if (done || !text.trim()) return;
+    done = true;
+    check.disabled = true;
+    input.lock();
+    const correct = checkWritten(text, ex.item);
+    input.mark(correct);
+    env.resolve({ correct, reveal: correct ? undefined : `${ex.item.target}  (${ex.item.roman})` });
+  }
+  env.onKey((e) => input.handleKey(e));
+  const root = h('div', { class: 'ex' }, h('h2', { class: 'prompt' }, ex.prompt), audioRow(env, ex.show.audio));
+  if (ex.show.text) root.append(bigText(ex.show.text, 'roman'));
+  if (ex.show.sub) root.append(h('div', { class: 'sub en' }, ex.show.sub));
+  root.append(input.el, check);
+  if (ex.item.kind !== 'letter') env.later(() => env.say(ex.show.audio), 250);
+  return root;
+}
+
+function renderTrace(ex, env) {
+  const SIZE = 300;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const canvas = h('canvas', { class: 'trace-canvas', width: SIZE * dpr, height: SIZE * dpr, 'aria-label': 'Drawing area' });
+  const ghost = h('div', { class: 'trace-ghost', lang: env.lang, hidden: true }, ex.item.target);
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+  ctx.lineWidth = 12;
+  ctx.lineCap = ctx.lineJoin = 'round';
+  let drawing = false;
+  let inked = false;
+  let revealed = false;
+  const at = (e) => {
+    const r = canvas.getBoundingClientRect();
+    return [((e.clientX - r.left) * SIZE) / r.width, ((e.clientY - r.top) * SIZE) / r.height];
+  };
+  canvas.addEventListener('pointerdown', (e) => {
+    if (revealed) return;
+    drawing = true;
+    canvas.setPointerCapture(e.pointerId);
+    ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--ink').trim() || '#fff';
+    ctx.beginPath();
+    const [x, y] = at(e);
+    ctx.moveTo(x, y);
+    ctx.lineTo(x + 0.01, y);
+    ctx.stroke();
+    inked = true;
+    check.disabled = false;
+  });
+  canvas.addEventListener('pointermove', (e) => {
+    if (!drawing) return;
+    const [x, y] = at(e);
+    ctx.lineTo(x, y);
+    ctx.stroke();
+  });
+  const stop = () => (drawing = false);
+  canvas.addEventListener('pointerup', stop);
+  canvas.addEventListener('pointercancel', stop);
+
+  const guide = h('button', { class: 'btn small', onclick: () => ((ghost.hidden = !ghost.hidden), (guide.textContent = ghost.hidden ? 'Show guide' : 'Hide guide')) }, 'Show guide');
+  const clearBtn = h('button', { class: 'btn small', onclick: () => (ctx.clearRect(0, 0, SIZE, SIZE), (inked = false), (check.disabled = true)) }, 'Clear');
+  const check = h('button', { class: 'btn primary', disabled: true, onclick: reveal }, 'Check');
+  const rate = h('div', { class: 'speak-actions' });
+  function reveal() {
+    revealed = true;
+    ghost.hidden = false;
+    ghost.classList.add('model');
+    [guide, clearBtn, check].forEach((b) => (b.disabled = true));
+    rate.append(
+      h('p', { class: 'status' }, 'Compare your writing with the model. Is it close?'),
+      h('button', { class: 'btn primary', onclick: () => env.resolve({ correct: true, self: true }) }, 'Close enough'),
+      h('button', { class: 'btn', onclick: () => env.resolve({ correct: false, self: true, reveal: 'Look at the model once more and practise the stroke order.' }) }, 'Not really'));
+  }
+  return h('div', { class: 'ex' },
+    h('h2', { class: 'prompt' }, ex.prompt),
+    audioRow(env, ex.item.say ?? ex.item.target),
+    h('div', { class: 'sub en' }, ex.item.en),
+    h('div', { class: 'trace-box' }, ghost, canvas),
+    h('div', { class: 'speak-actions' }, guide, clearBtn, check),
+    rate);
+}
+
+function renderSpeak(ex, env) {
+  const produce = ex.type === 'produce';
+  const status = h('div', { class: 'status' }, produce ? 'Think of the Korean phrase, then tap the microphone and say it.' : 'Listen first, then tap the microphone and say it.');
+  const actions = h('div', { class: 'speak-actions' });
+  const mic = h('button', { class: 'btn mic' }, 'Tap and speak');
+  const hint = h('div', { class: 'hint-box', hidden: produce }, bigText(ex.item.target, '', env.lang), env.roman || produce ? h('div', { class: 'sub' }, ex.item.roman) : null, audioRow(env, ex.say));
+  const hintBtn = h('button', { class: 'btn small', onclick: () => showHint() }, 'Show hint');
+  let tries = 0;
+  let finished = false;
+  function showHint() {
+    hint.hidden = false;
+    hintBtn.hidden = true;
+    env.say(ex.say);
+  }
+  const finish = (r) => {
+    if (finished) return;
+    finished = true;
+    mic.disabled = true;
+    actions.replaceChildren();
+    if (produce) hint.hidden = false;
+    env.resolve(r);
+  };
+  const skip = h('button', { class: 'btn ghost', onclick: () => finish({ skipped: true }) }, 'Skip');
+  const fallback = () => {
+    mic.hidden = true;
+    actions.replaceChildren(h('button', { class: 'btn primary', onclick: () => finish({ correct: true, self: true }) }, 'I said it aloud'), skip);
+  };
+  const errors = {
+    'not-allowed': 'The microphone is blocked. Allow it in the browser address bar, or use self-check.',
+    'service-not-allowed': 'Speech recognition is blocked in this browser. Use self-check instead.',
+    'audio-capture': 'No microphone found. Use self-check instead.',
+    network: 'Speech recognition needs an internet connection. Use self-check instead.',
+    unsupported: 'This browser has no speech recognition (use Chrome or Edge). Use self-check instead.',
+  };
+  mic.onclick = async () => {
+    if (speech.isListening()) return speech.stopListening();
+    status.textContent = 'Listening...';
+    mic.classList.add('on');
+    mic.textContent = 'Listening... (tap to stop)';
+    try {
+      const { alternatives } = await speech.listen(env.lang);
+      tries++;
+      const v = judgeSpeech(alternatives, ex.accept);
+      if (v.verdict === 'pass') return finish({ correct: true, reveal: `Heard: ${alternatives[0]}` });
+      if (tries >= 3) return finish({ correct: false, reveal: `Heard: ${alternatives[0]}  |  Say: ${ex.item.target}` });
+      status.textContent = `I heard \u201c${alternatives[0]}\u201d. ${v.verdict === 'close' ? 'Close! ' : ''}${produce ? 'Try again' : 'Listen again and retry'} (${3 - tries} left).`;
+      if (produce) showHint();
+      addSkip(actions, skip);
+    } catch (err) {
+      if (errors[err.message]) {
+        status.textContent = errors[err.message];
+        fallback();
+      } else {
+        status.textContent = "I didn't hear anything. Tap the microphone and try again.";
+        addSkip(actions, skip);
+      }
+    } finally {
+      mic.classList.remove('on');
+      mic.textContent = 'Tap and speak';
+    }
+  };
+  if (!speech.asrSupported) {
+    status.textContent = errors.unsupported;
+    fallback();
+  }
+  const root = h('div', { class: 'ex' }, h('h2', { class: 'prompt' }, ex.prompt));
+  if (produce) root.append(bigText(ex.item.en, 'en'), hintBtn, hint);
+  else {
+    root.append(bigText(ex.item.target, '', env.lang), env.roman ? h('div', { class: 'sub' }, ex.item.roman) : null, h('div', { class: 'sub en' }, ex.item.en), audioRow(env, ex.say));
+  }
+  root.append(mic, status, actions);
+  if (!produce) env.later(() => env.say(ex.say), 250);
+  return root;
+}
+
+function renderBuild(ex, env) {
+  const answer = h('div', { class: 'tray answer', lang: env.lang });
+  const bank = h('div', { class: 'tray bank', lang: env.lang });
+  const check = h('button', { class: 'btn primary', disabled: true }, 'Check');
+  const chosen = [];
+  const tiles = ex.tiles.map((t, i) => ({ t, i, el: h('button', { class: 'tile', onclick: () => toggle(i) }, t) }));
+  const sync = () => {
+    answer.replaceChildren(...chosen.map((i) => h('button', { class: 'tile', onclick: () => toggle(i) }, tiles[i].t)));
+    bank.replaceChildren(...tiles.filter((x) => !chosen.includes(x.i)).map((x) => x.el));
+    check.disabled = chosen.length !== tiles.length;
+  };
+  function toggle(i) {
+    const at = chosen.indexOf(i);
+    if (at >= 0) chosen.splice(at, 1);
+    else chosen.push(i);
+    sync();
+  }
+  check.onclick = () => {
+    const attempt = chosen.map((i) => tiles[i].t);
+    const correct = attempt.join('\u0000') === ex.solution.join('\u0000');
+    check.disabled = true;
+    answer.classList.add(correct ? 'right' : 'wrong');
+    tiles.forEach((x) => (x.el.disabled = true));
+    answer.querySelectorAll('button').forEach((b) => (b.disabled = true));
+    env.resolve({ correct, reveal: correct ? undefined : ex.solution.join(ex.sep) });
+  };
+  sync();
+  return h('div', { class: 'ex' }, h('h2', { class: 'prompt' }, ex.prompt), audioRow(env, ex.show.audio), bigText(ex.show.text, 'en'), answer, bank, check);
+}
+
+function renderMatch(ex, env) {
+  const rights = ex.pairs.map((p) => ({ id: p.id, text: p.right })).sort(() => Math.random() - 0.5);
+  const lefts = ex.pairs.map((p) => ({ id: p.id, text: p.left })).sort(() => Math.random() - 0.5);
+  const stats = {};
+  let selected = null;
+  let matched = 0;
+  const mk = (x, side) => {
+    const b = h('button', { class: 'option match', lang: side === 'l' ? env.lang : null, onclick: () => pick(x, side, b) }, x.text);
+    b.dataset.id = x.id;
+    return b;
+  };
+  const lb = lefts.map((x) => mk(x, 'l'));
+  const rb = rights.map((x) => mk(x, 'r'));
+  function pick(x, side, btn) {
+    if (btn.disabled) return;
+    if (side === 'l') env.say(ex.pairs.find((p) => p.id === x.id).left);
+    const group = side === 'l' ? lb : rb;
+    if (!selected || selected.side === side) {
+      group.forEach((b) => b.classList.remove('sel'));
+      selected = { x, side, btn };
+      btn.classList.add('sel');
+      return;
+    }
+    const left = side === 'l' ? x : selected.x;
+    const ok = selected.x.id === x.id;
+    const s = (stats[left.id] ||= { c: 0, w: 0 });
+    if (ok) {
+      s.c++;
+      [selected.btn, btn].forEach((b) => (b.classList.remove('sel'), b.classList.add('right'), (b.disabled = true)));
+      if (++matched === ex.pairs.length) env.resolve({ correct: Object.values(stats).every((v) => v.w === 0), stats });
+    } else {
+      s.w++;
+      [selected.btn, btn].forEach((b) => (b.classList.remove('sel'), b.classList.add('wrong')));
+      const pair = [selected.btn, btn];
+      env.later(() => pair.forEach((b) => b.classList.remove('wrong')), 450);
+    }
+    selected = null;
+  }
+  return h('div', { class: 'ex' }, h('h2', { class: 'prompt' }, ex.prompt), h('div', { class: 'match-grid' }, h('div', { class: 'col' }, lb), h('div', { class: 'col' }, rb)));
+}
+
+const RENDERERS = { pick: renderPick, type: renderType, write: renderWrite, trace: renderTrace, speak: renderSpeak, produce: renderSpeak, build: renderBuild, match: renderMatch };
+
+const renderExercise = (ex, env) => RENDERERS[ex.type](ex, env);
+
+
+/**
+ * Per-screen environment. Everything that makes noise or touches the DOM later (audio, timers)
+ * is gated on the screen epoch so a closed lesson can never speak over the next screen.
+ */
+function makeEnv(app, resolve, onKey = () => {}) {
+  const epoch = app.epoch;
+  const live = () => epoch === app.epoch;
+  return {
+    settings: app.state.settings,
+    roman: app.state.goal === 'speak' || app.state.settings.roman,
+    lang: app.course.speechLang,
+    fold: app.index.fold,
+    say: (text, opts) => (live() ? app.say(text, opts) : Promise.resolve()),
+    later: (fn, ms) => setTimeout(() => live() && fn(), ms),
+    onKey,
+    resolve,
+  };
+}
+
+Object.assign(exports, { makeEnv, renderExercise, renderSpeak });
+});
+__d('keyboard.js', function (exports) {
+const { h } = __r('ui.js');
+const { KEY_MAP, KEY_ROWS, composeHangul } = __r('engine.js');
+
+/**
+ * Hangul text entry: an on-screen Dubeolsik keyboard plus physical-key support
+ * (KeyboardEvent.code, so it works on any layout and needs no Korean IME).
+ */
+function createHangulInput({ lang = 'ko', onSubmit = () => {}, onChange = () => {} } = {}) {
+  let jamo = [];
+  let shift = false;
+  let locked = false;
+
+  const display = h('div', { class: 'write-display', lang, 'aria-live': 'polite', 'aria-label': 'Your answer' });
+  const keyButtons = new Map();
+  const shiftBtn = h('button', { class: 'key shift', type: 'button', 'aria-label': 'Shift (double consonants)', onclick: () => ((shift = !shift), render()) }, '\u21E7');
+
+  const text = () => composeHangul(jamo);
+  function render() {
+    const t = text();
+    display.replaceChildren(t ? document.createTextNode(t) : h('span', { class: 'placeholder' }, 'Tap the keys below'), h('span', { class: 'caret' }));
+    shiftBtn.classList.toggle('on', shift);
+    for (const [code, b] of keyButtons) b.textContent = KEY_MAP[code][shift ? 1 : 0];
+    onChange(t);
+  }
+  function press(code) {
+    if (locked || !KEY_MAP[code]) return;
+    jamo.push(KEY_MAP[code][shift ? 1 : 0]);
+    shift = false;
+    render();
+  }
+  const back = () => !locked && (jamo.pop(), render());
+  const space = () => !locked && (jamo.push(' '), render());
+
+  const rows = KEY_ROWS.map((row, i) =>
+    h('div', { class: 'kb-row' },
+      i === 2 ? shiftBtn : null,
+      row.map((code) => {
+        const b = h('button', { class: 'key', type: 'button', lang, onclick: () => press(code) }, KEY_MAP[code][0]);
+        keyButtons.set(code, b);
+        return b;
+      }),
+      i === 2 ? h('button', { class: 'key wide', type: 'button', 'aria-label': 'Backspace', onclick: back }, '\u232B') : null));
+  rows.push(h('div', { class: 'kb-row' }, h('button', { class: 'key space', type: 'button', onclick: space }, 'space')));
+  const keyboard = h('div', { class: 'kb', 'aria-label': 'Hangul keyboard' }, rows);
+  render();
+
+  return {
+    el: h('div', { class: 'write' }, display, keyboard),
+    getText: text,
+    lock: () => (locked = true),
+    mark: (ok) => display.classList.add(ok ? 'right' : 'wrong'),
+    handleKey(e) {
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+      if (e.code === 'Enter') return onSubmit();
+      if (e.code === 'Backspace') return (e.preventDefault(), back());
+      if (e.code === 'Space') return (e.preventDefault(), space());
+      if (KEY_MAP[e.code]) {
+        e.preventDefault();
+        shift = e.shiftKey;
+        press(e.code);
+      }
+    },
+  };
+}
+
+Object.assign(exports, { createHangulInput });
+});
+__d('talk.js', function (exports) {
+const { h, clear, wait } = __r('ui.js');
+const { shuffle } = __r('engine.js');
+const { renderSpeak, makeEnv } = __r('exercises.js');
+
+/**
+ * Role-play: the app plays speaker A, you play speaker B.
+ * Each of your turns: choose the right reply (comprehension), then say it aloud.
+ */
+function runTalk(app, dialogue, { onExit, onFinish }) {
+  const epoch = app.epoch;
+  const alive = () => epoch === app.epoch;
+  const roman = app.state.goal === 'speak' || app.state.settings.roman;
+  const lang = app.course.speechLang;
+  const chat = h('div', { class: 'chat', 'aria-live': 'polite' });
+  const panel = h('div', { class: 'talk-panel' });
+  const exit = () => {
+    app.stopAudio();
+    onExit();
+  };
+  clear(app.root);
+  app.root.append(h('div', { class: 'session' },
+    h('header', { class: 'session-top' }, h('button', { class: 'icon-btn', 'aria-label': 'Close conversation', onclick: exit }, '\u2715'), h('div', { class: 'talk-title' }, dialogue.title)),
+    h('main', { class: 'session-body talk' }, h('p', { class: 'lead center' }, 'You are the person on the right. Listen, then reply.'), chat, panel)));
+
+  const bubble = (line, side) => {
+    const b = h('div', { class: `bubble ${side}` },
+      h('div', { class: 'b-main', lang }, line.target),
+      roman ? h('div', { class: 'b-sub' }, line.roman) : null,
+      h('div', { class: 'b-en' }, line.en));
+    chat.append(b);
+    b.scrollIntoView({ block: 'end', behavior: 'smooth' });
+    return b;
+  };
+
+  const replyPool = app.index.dialogues.flatMap((d) => d.lines).filter((l) => l.who === 'B');
+
+  function chooseReply(line) {
+    return new Promise((resolve) => {
+      let mistakes = 0;
+      const wrongs = shuffle(replyPool.filter((l) => l.target !== line.target && l.en !== line.en))
+        .filter((l, i, a) => a.findIndex((x) => x.target === l.target) === i)
+        .slice(0, 2);
+      const opts = shuffle([line, ...wrongs]);
+      const buttons = opts.map((o) =>
+        h('button', { class: 'option', onclick: () => pick(o) },
+          h('span', { class: 'o-label', lang }, o.target),
+          roman ? h('span', { class: 'o-sub' }, o.roman) : null));
+      function pick(o) {
+        const btn = buttons[opts.indexOf(o)];
+        if (o === line) {
+          btn.classList.add('right');
+          buttons.forEach((x) => (x.disabled = true));
+          setTimeout(() => resolve(mistakes), 350);
+        } else {
+          mistakes++;
+          btn.classList.add('wrong');
+          btn.disabled = true;
+        }
+      }
+      clear(panel);
+      panel.append(h('h2', { class: 'prompt' }, `Your turn. Reply: \u201c${line.en}\u201d`), h('div', { class: 'options' }, buttons));
+    });
+  }
+
+  function sayReply(line) {
+    return new Promise((resolve) => {
+      const ex = { type: 'speak', prompt: 'Now say your reply out loud', item: line, say: line.target, accept: [line.target] };
+      clear(panel);
+      panel.append(renderSpeak(ex, makeEnv(app, (r) => resolve(r))));
+    });
+  }
+
+  (async () => {
+    let mistakes = 0;
+    let spoken = 0;
+    let turns = 0;
+    for (const line of dialogue.lines) {
+      if (!alive()) return;
+      if (line.who === 'A') {
+        clear(panel);
+        bubble(line, 'them');
+        await app.say(line.target);
+        if (!alive()) return;
+        await wait(350);
+        continue;
+      }
+      turns++;
+      mistakes += await chooseReply(line);
+      if (!alive()) return;
+      const r = await sayReply(line);
+      if (!alive()) return;
+      if (r.correct) spoken++;
+      bubble(line, 'me');
+      await wait(250);
+    }
+    if (!alive()) return;
+    clear(panel);
+    const summary = onFinish({ mistakes, spoken, turns });
+    panel.append(h('div', { class: 'card summary' }, h('h1', {}, 'Conversation complete'), ...summary.lines.map((l) => h('p', {}, l)), h('button', { class: 'btn primary wide', onclick: exit }, 'Back to home')));
+    panel.scrollIntoView({ block: 'end', behavior: 'smooth' });
+  })();
+}
+
+Object.assign(exports, { runTalk });
+});
+__r('app.js');
+})();</script>
+  </body>
+</html>
